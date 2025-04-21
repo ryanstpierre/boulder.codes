@@ -35,11 +35,30 @@ export default function Register() {
     setSubmitError('');
 
     try {
-      // In a real implementation, this would connect to your API
-      // For now, we'll simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Submit to our Cloudflare D1 API endpoint
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
       
+      const result = await response.json();
+      
+      if (!response.ok) {
+        // Handle specific errors
+        if (response.status === 409) {
+          setSubmitError('This email address is already registered. Please use a different email.');
+        } else {
+          setSubmitError(result.error || 'There was an error submitting your registration. Please try again.');
+        }
+        return;
+      }
+      
+      // Success!
       setSubmitSuccess(true);
+      
       // Reset form
       setFormData({
         name: '',
@@ -52,8 +71,15 @@ export default function Register() {
         dietary: '',
         tshirtSize: '',
       });
+      
+      // Save registration ID in localStorage for reference
+      if (result.registrationId) {
+        localStorage.setItem('builders_room_registration_id', result.registrationId);
+      }
+      
     } catch (error) {
-      setSubmitError('There was an error submitting your registration. Please try again.');
+      console.error('Registration error:', error);
+      setSubmitError('Network error. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
     }

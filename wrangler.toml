@@ -3,3 +3,9 @@ compatibility_date = "2024-04-20"
 
 # For Cloudflare Pages
 pages_build_output_dir = "out"
+
+# D1 Database for registrations
+[[d1_databases]]
+binding = "DB"
+database_name = "builders_room_registrations"
+database_id = "placeholder-id" # This will be replaced with actual ID after creation

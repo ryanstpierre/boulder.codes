@@ -87,6 +87,8 @@ The site is configured for static export optimized for Cloudflare Pages. Key con
 - `public/_headers` - Custom headers for Cloudflare
 - `public/_redirects` - Redirect rules for client-side routing
 - `workers-site/index.js` - Cloudflare Workers script for enhanced routing
+- `functions/` - Cloudflare Functions for API endpoints
+- `functions/api/register.js` - Registration API endpoint using D1 database
 
 ### Setting up the Custom Domain
 
@@ -100,6 +102,39 @@ After deploying to Cloudflare Pages, follow these steps to set up the custom dom
 6. Wait for the domain to be verified (usually within minutes)
 
 If the boulder.codes domain is already managed by Cloudflare, this process should be seamless. Otherwise, follow Cloudflare's instructions for adding the required DNS records.
+
+### Setting up Cloudflare D1 for Registration Data
+
+The registration form uses Cloudflare D1 as a serverless SQL database to store participant data. Follow these steps to set up the database:
+
+1. Log in to your Cloudflare account and ensure you have the latest Wrangler CLI:
+
+```bash
+npm install -g wrangler
+```
+
+2. Run the setup script:
+
+```bash
+cd scripts
+./setup-d1.sh
+```
+
+This script will:
+- Create a new D1 database named `builders_room_registrations`
+- Apply the schema from `functions/schema.sql`
+- Update your `wrangler.toml` with the correct database ID
+- Generate and set a secure API key for accessing registration data
+
+3. The setup script will display an API key for accessing registration data via the `/api/registrations` endpoint. Store this key securely.
+
+4. To view registrations, make a GET request to `/api/registrations` with the Authorization header:
+
+```
+Authorization: Bearer YOUR_API_KEY_HERE
+```
+
+The registration data is stored securely in Cloudflare's D1 database and can be queried using Cloudflare's dashboard or API.
 
 ## Customization
 
