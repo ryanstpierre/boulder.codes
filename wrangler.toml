@@ -1,5 +1,6 @@
 name = "builders-room-bsw"
 compatibility_date = "2024-04-20"
+pages_build_output_dir = "out"
 
 [build]
 command = "npm run build"
@@ -7,9 +8,6 @@ output_directory = "out"
 
 [site]
 bucket = "out"
-
-# For Pages deployment
-pages_build_output_dir = "out"
 
 # Routes configuration for Next.js
 [[routes]]
