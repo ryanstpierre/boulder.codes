@@ -1,9 +1,21 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function Sponsors() {
+  // 2024 Sponsors
+  const sponsors2024 = [
+    { name: "Zed", logo: "/images/sponsors/zed.png", url: "https://zed.dev" },
+    { name: "Technical Integrity", logo: "/images/sponsors/technical-integrity.png", url: "https://technicalintegrity.com/" },
+    { name: "Viget", logo: "/images/sponsors/viget.png", url: "https://www.viget.com/" },
+    { name: "Moe's Bagel", logo: "/images/sponsors/moes-bagel.png", url: "https://moesbagel.com/" },
+    { name: "Jot", logo: "/images/sponsors/jot.png", url: "https://jot.co/" },
+    { name: "Freeplay", logo: "/images/sponsors/freeplay.png", url: "https://freeplay.ai/" },
+    { name: "Webflow", logo: "/images/sponsors/webflow.png", url: "https://webflow.com/" },
+    { name: "Keating & Lyden", logo: "/images/sponsors/keating-lyden.png", url: "https://www.keatingandlyden.com/" }
+  ];
   const sponsorTiers = [
     {
       tier: "Platinum",
@@ -95,8 +107,46 @@ export default function Sponsors() {
             </p>
           </div>
           
+          {/* 2024 Sponsors Section */}
+          <div className="bg-gradient-to-br from-indigo-900/30 to-purple-900/30 backdrop-blur-sm border border-indigo-700/50 rounded-2xl p-8 max-w-5xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              <span className="font-fun text-pink-400 text-4xl transform rotate-1 inline-block mr-2">2024</span>
+              <span className="text-white">Sponsors</span>
+            </h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {sponsors2024.map((sponsor, index) => (
+                <a 
+                  key={index} 
+                  href={sponsor.url} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 hover:bg-white/20 p-4 rounded-lg flex flex-col items-center justify-center group transition-all duration-300 border border-white/5 hover:border-white/20"
+                >
+                  <div className="bg-white rounded-lg p-4 h-32 w-full flex items-center justify-center mb-3 overflow-hidden">
+                    <div className="relative h-20 w-full">
+                      <Image
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        fill
+                        style={{ objectFit: 'contain' }}
+                        unoptimized={true}
+                      />
+                    </div>
+                  </div>
+                  <span className="text-white group-hover:text-blue-300 font-medium text-sm transition-colors">
+                    {sponsor.name}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+          
           <div className="bg-gradient-to-br from-slate-800/80 to-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8 text-center text-blue-300">Platinum Sponsors</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center text-gray-200">Previous Years</h2>
+            <div className="mb-10 text-center text-sm text-gray-400">Examples of past sponsorship tiers and benefits</div>
+            
+            <h3 className="text-2xl font-bold mb-8 text-center text-blue-300">Platinum Sponsors</h3>
             <div className="grid grid-cols-2 gap-6 mb-12">
               <div className="bg-white p-4 rounded-lg h-28 flex items-center justify-center">
                 <span className="text-slate-800 font-bold text-xl">Google</span>
@@ -106,7 +156,7 @@ export default function Sponsors() {
               </div>
             </div>
             
-            <h2 className="text-2xl font-bold mb-8 text-center text-yellow-300">Gold Sponsors</h2>
+            <h3 className="text-2xl font-bold mb-8 text-center text-yellow-300">Gold Sponsors</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
               <div className="bg-white p-4 rounded-lg h-24 flex items-center justify-center">
                 <span className="text-slate-800 font-bold">CU Boulder</span>
@@ -116,7 +166,7 @@ export default function Sponsors() {
               </div>
             </div>
             
-            <h2 className="text-xl font-bold mb-6 text-center text-gray-300">Silver & Community Sponsors</h2>
+            <h3 className="text-xl font-bold mb-6 text-center text-gray-300">Silver & Community Sponsors</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               <div className="bg-white p-3 rounded-lg h-20 flex items-center justify-center">
                 <span className="text-slate-800 font-bold text-sm">Foundry Group</span>
@@ -137,6 +187,9 @@ export default function Sponsors() {
         <section className="mb-24">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Become a Sponsor</h2>
+            <div className="inline-block bg-gradient-to-r from-yellow-500 to-amber-500 text-black font-bold py-1 px-3 rounded-lg transform -rotate-1 mb-4">
+              2025 Sponsorship Packages
+            </div>
             <p className="text-xl text-gray-300 mx-auto mb-6">
               Support the Boulder tech community and gain visibility for your brand
             </p>
