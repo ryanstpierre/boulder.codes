@@ -24,16 +24,6 @@ const nextConfig = {
   
   // Trailing slash for better compatibility
   trailingSlash: true,
-  
-  // Configure rewrites for SPA-like behavior
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: '/api/:path*',
-      },
-    ];
-  },
 }
 
 module.exports = nextConfig
