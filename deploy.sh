@@ -12,6 +12,6 @@ fi
 
 # Deploy to Cloudflare Pages
 echo "Deploying to Cloudflare Pages..."
-npx wrangler pages publish .next --project-name=builders-room-bsw --branch=main
+npx wrangler pages publish out --project-name=builders-room-bsw --branch=main
 
 echo "Deployment completed!"

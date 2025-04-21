@@ -7,9 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export",
-    "deploy": "wrangler pages publish .next --branch=main",
-    "deploy:preview": "wrangler pages publish .next --branch=preview"
+    "deploy": "wrangler pages publish out --branch=main",
+    "deploy:preview": "wrangler pages publish out --branch=preview"
   },
   "keywords": [
     "hackathon",

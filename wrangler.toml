@@ -1,50 +1,5 @@
 name = "builders-room-bsw"
 compatibility_date = "2024-04-20"
+
+# For Cloudflare Pages
 pages_build_output_dir = "out"
-
-[build]
-command = "npm run build"
-output_directory = "out"
-
-[site]
-bucket = "out"
-
-# Routes configuration for Next.js
-[[routes]]
-pattern = "/_next/static/*"
-headers = [
-  { key = "Cache-Control", value = "public, max-age=31536000, immutable" }
-]
-
-[[routes]]
-pattern = "/static/*"
-headers = [
-  { key = "Cache-Control", value = "public, max-age=31536000, immutable" }
-]
-
-[[routes]]
-pattern = "/*"
-headers = [
-  { key = "X-Frame-Options", value = "DENY" },
-  { key = "X-Content-Type-Options", value = "nosniff" },
-  { key = "Referrer-Policy", value = "strict-origin-when-cross-origin" },
-  { key = "Permissions-Policy", value = "camera=(), microphone=(), geolocation=(), interest-cohort=()" }
-]
-
-# API routes headers
-[[headers]]
-pattern = "/api/*"
-headers = [
-    { key = "Access-Control-Allow-Origin", value = "*" },
-    { key = "Access-Control-Allow-Methods", value = "GET, OPTIONS" },
-    { key = "Access-Control-Allow-Headers", value = "Content-Type" },
-    { key = "Cache-Control", value = "public, max-age=300, stale-while-revalidate=60" },
-]
-
-# Environment variables
-[env.production]
-vars = { ENVIRONMENT = "production" }
-
-# Custom domain configuration
-[env.production.site]
-domain = "buildersroom.boulder.codes"

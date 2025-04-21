@@ -1,5 +1,11 @@
 /*    /index.html   200
-/about/*    /about.html   200
-/register/*    /register.html   200
-/schedule/*    /schedule.html   200
-/sponsors/*    /sponsors.html   200
+/about    /about/index.html   200
+/register    /register/index.html   200
+/schedule    /schedule/index.html   200
+/sponsors    /sponsors/index.html   200
+
+# Handle nested paths
+/about/*    /about/index.html   200
+/register/*    /register/index.html   200
+/schedule/*    /schedule/index.html   200
+/sponsors/*    /sponsors/index.html   200

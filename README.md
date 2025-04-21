@@ -35,6 +35,26 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 The site is configured to deploy to Cloudflare Pages using the custom domain `buildersroom.boulder.codes`.
 
+### Cloudflare GitHub Integration
+
+This site uses Cloudflare Pages' built-in GitHub integration for automatic deployments:
+
+1. When changes are pushed to the connected GitHub repository, Cloudflare automatically detects the changes
+2. Cloudflare Pages builds the site according to the configured build settings
+3. The built site is automatically deployed to Cloudflare's global network
+
+No additional setup is required once the GitHub repository is connected to your Cloudflare Pages project.
+
+#### Cloudflare Pages Build Configuration
+
+When connecting your GitHub repository to Cloudflare Pages, use these build settings:
+
+- **Build command:** `npm run build`
+- **Build output directory:** `out`
+- **Node.js version:** 18.x (or newer)
+
+This ensures Cloudflare Pages correctly builds and serves the Next.js static export.
+
 ### Using the Deployment Script
 
 For convenience, you can use the included deployment script:
@@ -55,7 +75,7 @@ npx wrangler login
 npm run build
 
 # Deploy to Cloudflare Pages
-npx wrangler pages publish .next --project-name=builders-room-bsw --branch=main
+npx wrangler pages publish out --project-name=builders-room-bsw --branch=main
 ```
 
 ### Deployment Environment
@@ -67,6 +87,19 @@ The site is configured for static export optimized for Cloudflare Pages. Key con
 - `public/_headers` - Custom headers for Cloudflare
 - `public/_redirects` - Redirect rules for client-side routing
 - `workers-site/index.js` - Cloudflare Workers script for enhanced routing
+
+### Setting up the Custom Domain
+
+After deploying to Cloudflare Pages, follow these steps to set up the custom domain:
+
+1. Navigate to your project in the Cloudflare Pages dashboard
+2. Go to the "Custom domains" tab
+3. Click "Set up a custom domain"
+4. Enter `buildersroom.boulder.codes` as the domain
+5. Verify ownership by updating DNS settings as prompted
+6. Wait for the domain to be verified (usually within minutes)
+
+If the boulder.codes domain is already managed by Cloudflare, this process should be seamless. Otherwise, follow Cloudflare's instructions for adding the required DNS records.
 
 ## Customization
 
