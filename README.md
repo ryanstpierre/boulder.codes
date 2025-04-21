@@ -103,9 +103,9 @@ After deploying to Cloudflare Pages, follow these steps to set up the custom dom
 
 If the boulder.codes domain is already managed by Cloudflare, this process should be seamless. Otherwise, follow Cloudflare's instructions for adding the required DNS records.
 
-### Setting up Cloudflare D1 for Registration Data
+### Setting up Cloudflare D1 for Registration Data (Optional)
 
-The registration form uses Cloudflare D1 as a serverless SQL database to store participant data. Follow these steps to set up the database:
+The registration form uses Cloudflare D1 as a serverless SQL database to store participant data. This setup is optional for initial deployment, as the application will work in a fallback mode without the database. To set up the database for production use, follow these steps:
 
 1. Log in to your Cloudflare account and ensure you have the latest Wrangler CLI:
 

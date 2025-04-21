@@ -8,4 +8,4 @@ pages_build_output_dir = "out"
 [[d1_databases]]
 binding = "DB"
 database_name = "builders_room_registrations"
-database_id = "placeholder-id" # This will be replaced with actual ID after creation
+database_id = "c20c8b57-74bb-4462-8f6a-7ce4afd69f60" # This will be replaced with actual ID after creation
