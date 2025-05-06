@@ -1,0 +1,7 @@
+[build]
+  command = "npm install @supabase/supabase-js && npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "18.17.0"
+  NPM_FLAGS = "--legacy-peer-deps"
