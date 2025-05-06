@@ -41,7 +41,11 @@ const envConfig = isDevelopment
     }
   : {
       // Production-specific config
-      output: 'export'
+      output: 'export',
+      // Exclude API routes from the export
+      experimental: {
+        excludeDefaultMomentLocales: true,
+      },
     };
 
 // Merge configs
