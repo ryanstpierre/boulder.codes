@@ -4,8 +4,8 @@
   "description": "Boulder Startup Week Builders' Room Website",
   "scripts": {
     "dev": "next dev",
-    "build": "npm install --no-package-lock && next build",
-    "build:next": "next build",
+    "build": "npm install && next build",
+    "build:next": "NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint",
     "deploy": "wrangler pages publish out --branch=main",
