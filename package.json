@@ -4,7 +4,8 @@
   "description": "Boulder Startup Week Builders' Room Website",
   "scripts": {
     "dev": "next dev",
-    "build": "npm install @supabase/supabase-js && next build",
+    "build": "node build.js",
+    "build:next": "next build",
     "start": "next start",
     "lint": "next lint",
     "deploy": "wrangler pages publish out --branch=main",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "@cloudflare/kv-asset-handler": "^0.3.0",
+    "ignore-loader": "^0.1.2",
     "wrangler": "^3.18.0"
   },
   "engines": {
