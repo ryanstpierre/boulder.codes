@@ -1,5 +1,9 @@
 // Admin proxy API for the tags management endpoint during local development
 import { createClient } from '@supabase/supabase-js';
+import { config } from '../exportConfig';
+
+// Export the config for use in static export
+export { config };
 
 // Helper function to create a slug from a string
 function createSlug(str) {

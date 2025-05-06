@@ -1,5 +1,9 @@
 // API proxy for the tags endpoint during local development
 import { createClient } from '@supabase/supabase-js';
+import { config } from './exportConfig';
+
+// Export the config for use in static export
+export { config };
 
 export default async function handler(req, res) {
   // Only allow GET requests

@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const isDevelopment = process.env.NODE_ENV === 'development';
+const apiIgnorePlugin = require('./next-plugin-ignore-api');
 
 // Create the base config
 const baseConfig = {
@@ -24,6 +25,15 @@ const baseConfig = {
   
   // Trailing slash for better compatibility
   trailingSlash: true,
+  
+  // Add webpack config to ignore API routes in production
+  webpack: (config, options) => {
+    if (!isDevelopment && !options.isServer) {
+      // Ignore /api folder in client-side builds
+      config.resolve.alias['pages/api'] = false;
+    }
+    return config;
+  }
 };
 
 // Add environment-specific config
@@ -41,11 +51,7 @@ const envConfig = isDevelopment
     }
   : {
       // Production-specific config
-      output: 'export',
-      // Exclude API routes from the export
-      experimental: {
-        excludeDefaultMomentLocales: true,
-      },
+      output: 'export'
     };
 
 // Merge configs
