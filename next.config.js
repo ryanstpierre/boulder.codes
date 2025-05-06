@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+// Create the base config
+const baseConfig = {
   reactStrictMode: true,
   
   // Optimize for Cloudflare Pages
@@ -16,28 +19,35 @@ const nextConfig = {
   
   // Production optimizations
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+    removeConsole: !isDevelopment,
   },
-  
-  // Only use static export in production
-  ...(process.env.NODE_ENV === 'production' && {
-    output: 'export',
-  }),
   
   // Trailing slash for better compatibility
   trailingSlash: true,
-  
-  // For local development, let's set up API endpoints
-  async rewrites() {
-    return process.env.NODE_ENV === 'development'
-      ? [
+};
+
+// Add environment-specific config
+const envConfig = isDevelopment 
+  ? {
+      // Development-specific config
+      async rewrites() {
+        return [
           {
             source: '/api/:path*',
             destination: '/api/:path*'
           }
-        ]
-      : [];
-  }
-}
+        ];
+      }
+    }
+  : {
+      // Production-specific config
+      output: 'export'
+    };
+
+// Merge configs
+const nextConfig = {
+  ...baseConfig,
+  ...envConfig
+};
 
 module.exports = nextConfig
