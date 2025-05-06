@@ -18,7 +18,9 @@ function createSlug(str) {
 // Helper function to initialize Supabase client
 function initSupabase(context) {
   const supabaseUrl = context.env.NEXT_PUBLIC_SUPABASE_URL || 'https://knttgwhefurhoktkcbig.supabase.co';
-  const supabaseKey = context.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  
+  // Try to use service role key first, fall back to anon key
+  const supabaseKey = context.env.SUPABASE_SERVICE_ROLE_KEY || context.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   
   if (!supabaseKey) {
     throw new Error('Supabase key is required');

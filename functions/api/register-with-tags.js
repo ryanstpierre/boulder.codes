@@ -34,7 +34,9 @@ export async function onRequestPost(context) {
     
     // Initialize Supabase client
     const supabaseUrl = context.env.NEXT_PUBLIC_SUPABASE_URL || 'https://knttgwhefurhoktkcbig.supabase.co';
-    const supabaseKey = context.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    
+    // Try to use service role key first, fall back to anon key
+    const supabaseKey = context.env.SUPABASE_SERVICE_ROLE_KEY || context.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     
     // If no Supabase key is provided, return a fallback response
     if (!supabaseKey) {
@@ -52,6 +54,7 @@ export async function onRequestPost(context) {
       );
     }
     
+    // Create client with preferred service role key
     const supabase = createClient(supabaseUrl, supabaseKey);
     
     // Extract tags from the request

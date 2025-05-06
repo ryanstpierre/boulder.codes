@@ -34,7 +34,9 @@ export async function onRequestPost(context) {
     
     // Initialize Supabase client
     const supabaseUrl = context.env.NEXT_PUBLIC_SUPABASE_URL || 'https://knttgwhefurhoktkcbig.supabase.co';
-    const supabaseKey = context.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    
+    // Admin endpoints should always use the service role key for full access
+    const supabaseKey = context.env.SUPABASE_SERVICE_ROLE_KEY || context.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     
     if (!supabaseKey) {
       return new Response(
