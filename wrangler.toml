@@ -3,6 +3,7 @@ compatibility_date = "2024-04-20"
 
 # For Cloudflare Pages
 pages_build_output_dir = "out"
+build_command = "./cloudflare-build.sh"
 
 # D1 Database for registrations
 [[d1_databases]]

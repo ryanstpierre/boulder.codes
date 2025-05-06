@@ -62,7 +62,11 @@ export default function Home() {
                     </li>
                     <li className="flex">
                       <span className="text-green-400 mr-2">✓</span>
-                      <span><span className="font-semibold">Demo Day Exposure</span> - Present to investors and community</span>
+                      <span><span className="font-semibold">Mentor Access</span> - Connect with industry experts and startup founders</span>
+                    </li>
+                    <li className="flex mb-3">
+                      <span className="text-green-400 mr-2">✓</span>
+                      <span><span className="font-semibold">Team Formation</span> - Find the perfect teammates or bring your own</span>
                     </li>
                   </ul>
                 </div>
@@ -102,6 +106,7 @@ export default function Home() {
         <section className="py-16 bg-slate-800">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold mb-8 text-center">Past Success Stories</h2>
+            <p className="text-center text-gray-400 mb-8">(Made up by AI)</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Success Story 1 */}
               <div className="bg-slate-700 rounded-lg overflow-hidden">
@@ -178,22 +183,19 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-8">
               {/* Placeholder for sponsor logos */}
               <div className="bg-white p-4 rounded w-40 h-20 flex items-center justify-center">
-                <span className="text-slate-800 font-bold">Google</span>
+                <span className="text-slate-800 font-bold">Vercel (hopefully)</span>
               </div>
               <div className="bg-white p-4 rounded w-40 h-20 flex items-center justify-center">
-                <span className="text-slate-800 font-bold">Techstars</span>
+                <span className="text-slate-800 font-bold">Keating and Lyden, LLC (hopefully)</span>
               </div>
               <div className="bg-white p-4 rounded w-40 h-20 flex items-center justify-center">
-                <span className="text-slate-800 font-bold">CU Boulder</span>
+                <span className="text-slate-800 font-bold">Ozo (hopefully)</span>
               </div>
               <div className="bg-white p-4 rounded w-40 h-20 flex items-center justify-center">
-                <span className="text-slate-800 font-bold">StartupCo</span>
+                <span className="text-slate-800 font-bold">Upslope (hopefully)</span>
               </div>
               <div className="bg-white p-4 rounded w-40 h-20 flex items-center justify-center">
-                <span className="text-slate-800 font-bold">Foundry Group</span>
-              </div>
-              <div className="bg-white p-4 rounded w-40 h-20 flex items-center justify-center">
-                <span className="text-slate-800 font-bold">Boulder.codes</span>
+                <span className="text-slate-800 font-bold">Techstars (hopefully)</span>
               </div>
             </div>
             <div className="mt-8 text-center">
@@ -299,9 +301,9 @@ export default function Home() {
               <div className="bg-blue-900/30 border border-blue-700/30 rounded-lg py-4 px-6">
                 <p className="text-lg">
                   <span className="font-semibold text-blue-300">💡 Pro Tip:</span> The Builders' Room schedule is designed to let you attend Boulder Startup Week sessions while still working on your project.
-                  <a href="https://boulderstartupweek.com/" target="_blank" rel="noopener noreferrer" className="ml-2 text-blue-400 hover:underline">
+                  <Link href="https://boulderstartupweek2025.sched.com/" className="ml-2 text-blue-400 hover:underline">
                     Check the full BSW schedule
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>

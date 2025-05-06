@@ -18,8 +18,12 @@
   "author": "Boulder.codes",
   "license": "ISC",
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
     "autoprefixer": "^10.4.14",
+    "dotenv": "^16.5.0",
     "next": "^13.4.12",
+    "node-fetch": "^3.3.2",
+    "pg": "^8.15.6",
     "postcss": "^8.4.27",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -27,6 +31,7 @@
   },
   "devDependencies": {
     "@cloudflare/kv-asset-handler": "^0.3.0",
+    "ignore-loader": "^0.1.2",
     "wrangler": "^3.18.0"
   },
   "engines": {

@@ -3,18 +3,26 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import TagSelector from '../components/TagSelector';
+import { registerWithTags } from '../utils/api';
 
 export default function Register() {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
+    githubUsername: '',
     role: '',
-    experience: '',
-    teamPreference: '',
-    bswAttendance: '',
+    hackathonExperience: '',
+    pastAttendance: false,
+    hasTeam: false,
+    teamSize: '',
     projectIdea: '',
-    dietary: '',
-    tshirtSize: '',
+    skills: '',
+    interests: '',
+    dietaryRestrictions: '',
+    additionalNotes: '',
+    tags: []
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,10 +30,10 @@ export default function Register() {
   const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
@@ -35,41 +43,29 @@ export default function Register() {
     setSubmitError('');
 
     try {
-      // Submit to our Cloudflare D1 API endpoint
-      const response = await fetch('/api/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      const result = await response.json();
-      
-      if (!response.ok) {
-        // Handle specific errors
-        if (response.status === 409) {
-          setSubmitError('This email address is already registered. Please use a different email.');
-        } else {
-          setSubmitError(result.error || 'There was an error submitting your registration. Please try again.');
-        }
-        return;
-      }
+      // Use our API utility to register user with tags
+      const result = await registerWithTags(formData);
       
       // Success!
       setSubmitSuccess(true);
       
       // Reset form
       setFormData({
-        name: '',
+        firstName: '',
+        lastName: '',
         email: '',
+        githubUsername: '',
         role: '',
-        experience: '',
-        teamPreference: '',
-        bswAttendance: '',
+        hackathonExperience: '',
+        pastAttendance: false,
+        hasTeam: false,
+        teamSize: '',
         projectIdea: '',
-        dietary: '',
-        tshirtSize: '',
+        skills: '',
+        interests: '',
+        dietaryRestrictions: '',
+        additionalNotes: '',
+        tags: []
       });
       
       // Save registration ID in localStorage for reference
@@ -79,7 +75,13 @@ export default function Register() {
       
     } catch (error) {
       console.error('Registration error:', error);
-      setSubmitError('Network error. Please check your connection and try again.');
+      
+      // Handle specific errors
+      if (error.message.includes('already registered')) {
+        setSubmitError('This email address is already registered. Please use a different email.');
+      } else {
+        setSubmitError(error.message || 'There was an error submitting your registration. Please try again.');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -99,7 +101,7 @@ export default function Register() {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">Register for Builders&apos; Room</h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Join us for an exciting 4-day startup experience during Boulder Startup Week
+              Join us for an exciting 4-day hackathon experience during Boulder Startup Week
             </p>
           </div>
           
@@ -176,37 +178,67 @@ export default function Register() {
               </div>
             )}
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div>
-                <label htmlFor="name" className="block mb-2 font-medium text-gray-200">Full Name *</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
-                />
+            {/* Personal Information */}
+            <div className="mb-8">
+              <h3 className="text-lg font-medium text-blue-300 mb-4 pb-2 border-b border-slate-700">Personal Information</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label htmlFor="firstName" className="block mb-2 font-medium text-gray-200">First Name *</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block mb-2 font-medium text-gray-200">Last Name *</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
+                  />
+                </div>
               </div>
               
-              <div>
-                <label htmlFor="email" className="block mb-2 font-medium text-gray-200">Email Address *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="email" className="block mb-2 font-medium text-gray-200">Email Address *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="githubUsername" className="block mb-2 font-medium text-gray-200">GitHub Username (Optional)</label>
+                  <input
+                    type="text"
+                    id="githubUsername"
+                    name="githubUsername"
+                    value={formData.githubUsername}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
+                  />
+                </div>
               </div>
             </div>
             
+            {/* Professional Information */}
             <div className="mb-8">
               <h3 className="text-lg font-medium text-blue-300 mb-4 pb-2 border-b border-slate-700">Professional Information</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label htmlFor="role" className="block mb-2 font-medium text-gray-200">Your Role *</label>
                   <select
@@ -228,11 +260,40 @@ export default function Register() {
                 </div>
                 
                 <div>
-                  <label htmlFor="experience" className="block mb-2 font-medium text-gray-200">Hackathon Experience</label>
+                  <label htmlFor="skills" className="block mb-2 font-medium text-gray-200">Your Skills</label>
+                  <TagSelector 
+                    selectedTags={formData.tags}
+                    onChange={(tags) => setFormData(prev => ({ ...prev, tags }))}
+                  />
+                  <p className="mt-1 text-xs text-gray-400">Select or add your skills and technologies</p>
+                </div>
+              </div>
+              
+              <div>
+                <label htmlFor="interests" className="block mb-2 font-medium text-gray-200">Areas of Interest</label>
+                <input
+                  type="text"
+                  id="interests"
+                  name="interests"
+                  value={formData.interests}
+                  onChange={handleChange}
+                  placeholder="AI, Web3, Climate Tech, etc."
+                  className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
+                />
+              </div>
+            </div>
+            
+            {/* Hackathon Experience */}
+            <div className="mb-8">
+              <h3 className="text-lg font-medium text-blue-300 mb-4 pb-2 border-b border-slate-700">Hackathon Experience</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label htmlFor="hackathonExperience" className="block mb-2 font-medium text-gray-200">Hackathon Experience</label>
                   <select
-                    id="experience"
-                    name="experience"
-                    value={formData.experience}
+                    id="hackathonExperience"
+                    name="hackathonExperience"
+                    value={formData.hackathonExperience}
                     onChange={handleChange}
                     className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
                   >
@@ -242,50 +303,53 @@ export default function Register() {
                     <option value="experienced">I'm a hackathon veteran</option>
                   </select>
                 </div>
-              </div>
-            </div>
-            
-            <div className="mb-8">
-              <h3 className="text-lg font-medium text-blue-300 mb-4 pb-2 border-b border-slate-700">Event Participation</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="teamPreference" className="block mb-2 font-medium text-gray-200">Team Preference</label>
-                  <select
-                    id="teamPreference"
-                    name="teamPreference"
-                    value={formData.teamPreference}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
-                  >
-                    <option value="">Select a preference</option>
-                    <option value="form">I want to form a team at the event</option>
-                    <option value="bringing">I'm bringing my own team</option>
-                    <option value="join">I'd like to join an existing team</option>
-                    <option value="solo">I plan to work solo</option>
-                  </select>
-                </div>
                 
-                <div>
-                  <label htmlFor="bswAttendance" className="block mb-2 font-medium text-gray-200">BSW Attendance</label>
-                  <select
-                    id="bswAttendance"
-                    name="bswAttendance"
-                    value={formData.bswAttendance}
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="pastAttendance"
+                    name="pastAttendance"
+                    checked={formData.pastAttendance}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
-                  >
-                    <option value="">How many BSW events do you plan to attend?</option>
-                    <option value="none">None - focused on building</option>
-                    <option value="few">A few key talks</option>
-                    <option value="many">Several talks throughout the week</option>
-                    <option value="undecided">Undecided</option>
-                  </select>
+                    className="w-5 h-5 text-blue-600 bg-slate-600 border-slate-500 rounded focus:ring-blue-500 focus:ring-opacity-50"
+                  />
+                  <label htmlFor="pastAttendance" className="ml-3 text-gray-200">
+                    I've attended Boulder Startup Week Builders' Room before
+                  </label>
                 </div>
               </div>
+              
+              <div className="flex items-center mb-6">
+                <input
+                  type="checkbox"
+                  id="hasTeam"
+                  name="hasTeam"
+                  checked={formData.hasTeam}
+                  onChange={handleChange}
+                  className="w-5 h-5 text-blue-600 bg-slate-600 border-slate-500 rounded focus:ring-blue-500 focus:ring-opacity-50"
+                />
+                <label htmlFor="hasTeam" className="ml-3 text-gray-200">
+                  I'm signing up on behalf of a team
+                </label>
+              </div>
+              
+              {formData.hasTeam && (
+                <div className="mb-6 ml-8">
+                  <label htmlFor="teamSize" className="block mb-2 font-medium text-gray-200">How many people are on your team?</label>
+                  <input
+                    type="number"
+                    id="teamSize"
+                    name="teamSize"
+                    value={formData.teamSize}
+                    onChange={handleChange}
+                    min="2"
+                    className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
+                  />
+                </div>
+              )}
               
               <div>
-                <label htmlFor="projectIdea" className="block mb-2 font-medium text-gray-200">Project Idea or Interest Areas (Optional)</label>
+                <label htmlFor="projectIdea" className="block mb-2 font-medium text-gray-200">Project Idea or Concept</label>
                 <textarea
                   id="projectIdea"
                   name="projectIdea"
@@ -298,41 +362,33 @@ export default function Register() {
               </div>
             </div>
             
+            {/* Event Details */}
             <div className="mb-8">
               <h3 className="text-lg font-medium text-blue-300 mb-4 pb-2 border-b border-slate-700">Event Details</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="dietary" className="block mb-2 font-medium text-gray-200">Dietary Restrictions</label>
-                  <input
-                    type="text"
-                    id="dietary"
-                    name="dietary"
-                    value={formData.dietary}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
-                    placeholder="Vegetarian, Vegan, Gluten-free, etc."
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="tshirtSize" className="block mb-2 font-medium text-gray-200">T-Shirt Size</label>
-                  <select
-                    id="tshirtSize"
-                    name="tshirtSize"
-                    value={formData.tshirtSize}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
-                  >
-                    <option value="">Select a size</option>
-                    <option value="xs">XS</option>
-                    <option value="s">S</option>
-                    <option value="m">M</option>
-                    <option value="l">L</option>
-                    <option value="xl">XL</option>
-                    <option value="xxl">XXL</option>
-                    <option value="xxxl">XXXL</option>
-                  </select>
-                </div>
+              <div className="mb-6">
+                <label htmlFor="dietaryRestrictions" className="block mb-2 font-medium text-gray-200">Dietary Restrictions</label>
+                <input
+                  type="text"
+                  id="dietaryRestrictions"
+                  name="dietaryRestrictions"
+                  value={formData.dietaryRestrictions}
+                  onChange={handleChange}
+                  placeholder="Vegetarian, Vegan, Gluten-free, etc."
+                  className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="additionalNotes" className="block mb-2 font-medium text-gray-200">Additional Notes (Optional)</label>
+                <textarea
+                  id="additionalNotes"
+                  name="additionalNotes"
+                  value={formData.additionalNotes}
+                  onChange={handleChange}
+                  rows={3}
+                  className="w-full px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600 text-white focus:border-blue-500 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none"
+                  placeholder="Anything else you'd like us to know..."
+                ></textarea>
               </div>
             </div>
             
