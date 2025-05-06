@@ -1,0 +1,2 @@
+# Ignore API routes during build
+src/pages/api/

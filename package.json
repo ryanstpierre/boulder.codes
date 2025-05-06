@@ -4,7 +4,7 @@
   "description": "Boulder Startup Week Builders' Room Website",
   "scripts": {
     "dev": "next dev",
-    "build": "node build.js",
+    "build": "npm install --no-package-lock && next build",
     "build:next": "next build",
     "start": "next start",
     "lint": "next lint",
