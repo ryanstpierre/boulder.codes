@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
-import BSWLogo from './BSWLogo';
 
 const Hero = () => {
   const [currentPhase, setCurrentPhase] = useState(0);
