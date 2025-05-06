@@ -19,11 +19,25 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   
-  // Output as static for Cloudflare Pages
-  output: 'export',
+  // Only use static export in production
+  ...(process.env.NODE_ENV === 'production' && {
+    output: 'export',
+  }),
   
   // Trailing slash for better compatibility
   trailingSlash: true,
+  
+  // For local development, let's set up API endpoints
+  async rewrites() {
+    return process.env.NODE_ENV === 'development'
+      ? [
+          {
+            source: '/api/:path*',
+            destination: '/api/:path*'
+          }
+        ]
+      : [];
+  }
 }
 
 module.exports = nextConfig
