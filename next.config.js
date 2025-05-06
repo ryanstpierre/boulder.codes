@@ -6,7 +6,7 @@ const nextConfig = {
   // Configure image optimization
   images: {
     domains: ['boulder.codes', 'buildersroom.boulder.codes'],
-    unoptimized: true, // For static export on Cloudflare
+    unoptimized: true, // Required for static export
   },
   
   // Security
@@ -15,8 +15,23 @@ const nextConfig = {
   // Trailing slash for better compatibility
   trailingSlash: true,
   
-  // Output static files
+  // Static export for Cloudflare Pages
   output: 'export',
+  
+  // Disable source maps in production
+  productionBrowserSourceMaps: false,
+  
+  // Exclude API pages from build
+  webpack: (config) => {
+    if (!process.env.INCLUDE_API_ROUTES) {
+      // Ignore API routes in client-side builds for deployment
+      config.module.rules.push({
+        test: /\/api\/.+\.(js|ts)x?$/,
+        loader: 'ignore-loader',
+      });
+    }
+    return config;
+  }
 }
 
 module.exports = nextConfig
