@@ -6,21 +6,17 @@ import ForceGraph from './ForceGraph';
 const Hero = () => {
   const [currentPhase, setCurrentPhase] = useState(0);
   const [showDetails, setShowDetails] = useState(false);
-  const [showUniverse, setShowUniverse] = useState(true); // Default to true (show starfield with labels)
+  const [showUniverse, setShowUniverse] = useState(false); // Default to false (don't show starfield with labels)
   const forceGraphRef = useRef(null);
   
-  // Automatically show details after a delay
+  // Automatically show details
   useEffect(() => {
-    // First, show the universe
-    setShowUniverse(true);
+    // Always show details immediately
+    setShowDetails(true);
+    setShowUniverse(false);
     
-    // Then, after a delay, show details by turning off universe mode
-    const timer = setTimeout(() => {
-      setShowDetails(true);
-      setShowUniverse(false);
-    }, 4500); // Show details after 4.5 seconds
-    
-    return () => clearTimeout(timer);
+    // We're disabling the universe mode for now
+    return () => {};
   }, []);
   
   // Handle animation cycle - faster than before
@@ -184,8 +180,8 @@ const Hero = () => {
           </div>
         </div>
             
-        {/* Event details - hidden in universe mode, visible otherwise, with animation */}
-        <div className={`transition-all duration-1000 transform ${!showUniverse && showDetails ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
+        {/* Event details - always visible now */}
+        <div className="transition-all duration-1000 transform opacity-100 translate-y-0">
           {/* Boulder Startup Week Builders' Room Combined Logo */}
           {/* Unified simplified card layout that's shorter */}
           <div className="flex flex-col items-center justify-center mb-6 sm:mb-10">
@@ -297,34 +293,7 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Universe Toggle Button - Top Right Fixed Position */}
-        <div className="fixed top-20 right-4 sm:top-24 sm:right-6 md:top-28 md:right-8 z-40">
-          <button 
-            onClick={() => setShowUniverse(!showUniverse)}
-            className="fun-card rounded-full px-3 py-2 flex items-center transform hover:scale-110 transition-all shadow-[0_0_20px_rgba(255,255,255,0.4)] border-white/50 hover:border-white/70 bg-[rgba(10,35,80,0.6)] backdrop-blur-sm"
-          >
-            <span className="text-xs text-white font-medium flex items-center">
-              {showUniverse ? (
-                <>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-[#FFE08A]" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                  </svg>
-                  <span className="whitespace-nowrap hidden sm:inline">Show Event Details</span>
-                  <span className="whitespace-nowrap sm:hidden">Details</span>
-                </>
-              ) : (
-                <>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-[#FFE08A]" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 13.5a1 1 0 11-2 0 1 1 0 012 0zm-1-5a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zm-1-5a1 1 0 011-1 1 1 0 110 2 1 1 0 01-1-1z" clipRule="evenodd" />
-                  </svg>
-                  <span className="whitespace-nowrap hidden sm:inline">Show Universe</span>
-                  <span className="whitespace-nowrap sm:hidden">Universe</span>
-                </>
-              )}
-              <span className="ml-1 text-[#FFE08A] text-xs sparkle">✨</span>
-            </span>
-          </button>
-        </div>
+        {/* Universe Toggle Button - Temporarily removed */}
 
       </div>
     </section>
