@@ -1,63 +1,129 @@
 import Link from 'next/link';
+import BSWLogo from './BSWLogo';
 
-const Footer = () => (
-  <footer className="bg-slate-900 py-12 border-t border-slate-800">
-    <div className="container mx-auto px-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <h3 className="text-lg font-bold mb-4">
-            <span className="text-blue-400">boulder</span><span className="text-white">.</span><span className="text-green-400">codes</span>
-            <span className="text-white ml-2">Builders&apos; Room</span>
-          </h3>
-          <p className="text-gray-400">
-            The premier hackathon at Boulder Startup Week, bringing together the best developers, 
-            designers, and entrepreneurs in the community.
-          </p>
-        </div>
-        
-        <div>
-          <h3 className="text-white text-lg font-bold mb-4">Quick Links</h3>
-          <ul className="space-y-2">
-            <li><Link href="/" className="text-gray-400 hover:text-blue-400 transition-colors">Home</Link></li>
-            <li><Link href="/register" className="text-gray-400 hover:text-blue-400 transition-colors">Register</Link></li>
-            <li><Link href="/schedule" className="text-gray-400 hover:text-blue-400 transition-colors">Schedule</Link></li>
-            <li><Link href="/sponsors" className="text-gray-400 hover:text-blue-400 transition-colors">Sponsors</Link></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h3 className="text-white text-lg font-bold mb-4">Contact Us</h3>
-          <p className="text-gray-400 mb-2">
-            Have questions? Reach out to us:
-          </p>
-          <a href="mailto:bouldercodes@gmail.com" className="text-blue-400 hover:text-blue-300">
-            bouldercodes@gmail.com
-          </a>
-          
-          {/* <div className="mt-6 flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-blue-400">
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-              </svg>
-            </a>
-            <a href="#" className="text-gray-400 hover:text-blue-400">
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
-              </svg>
-            </a>
-          </div> */}
-        </div>
-      </div>
+const Footer = () => {
+  // Use a function to get current year to prevent hydration errors
+  const currentYear = () => new Date().getFullYear();
+
+  return (
+    <footer className="bg-slate-900 py-12 border-t border-slate-800 relative overflow-hidden">
+      {/* Abstract shapes */}
+      <div className="absolute left-1/4 top-12 w-64 h-64 bg-[rgba(var(--bsw-blue),0.05)] rounded-full filter blur-3xl"></div>
+      <div className="absolute right-1/4 bottom-0 w-48 h-48 bg-[rgba(var(--fun-purple),0.03)] rounded-full filter blur-3xl"></div>
       
-      <div className="mt-8 pt-8 border-t border-slate-800 text-center">
-        <p className="text-gray-500">
-          © {new Date().getFullYear()} <span className="text-blue-400">boulder</span><span className="text-gray-500">.</span><span className="text-green-400">codes</span> 
-          <span className="text-gray-500"> · Boulder Startup Week Builders&apos; Room </span>
-          <a href="https://boulder.codes" className="text-blue-400 hover:text-blue-300">boulder.codes</a>
-        </p>
+      <div className="container mx-auto px-6 relative z-10">
+        {/* BSW Partnership Banner */}
+        <div className="mb-8 p-6 fun-card bg-gradient-to-br from-[rgba(var(--bsw-blue-dark),0.3)] to-[rgba(var(--bsw-blue),0.2)] border-[rgba(var(--bsw-blue),0.4)] rounded-xl">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
+              <div className="flex items-center mb-3">
+                <span className="text-xl font-extrabold mr-3 rotate-hover">
+                  <span className="text-blue-400">boulder</span><span className="text-white">.</span><span className="text-green-400">codes</span>
+                </span>
+                <span className="text-white/50 mx-1 relative">
+                  presents
+                  <span className="absolute -top-2 -right-2 text-yellow-300 text-xs sparkle sparkle-1">✨</span>
+                </span>
+              </div>
+              <div className="flex items-center">
+                <BSWLogo className="w-auto h-8 mr-2" withGlow />
+                <h3 className="text-[rgba(var(--bsw-blue),1)] font-bold text-lg glow-text">Builders&apos; Room</h3>
+              </div>
+            </div>
+            
+            <div className="text-center md:text-right">
+              <div className="fun-card rounded-full px-4 py-2 inline-flex items-center mb-3">
+                <BSWLogo variant="mark" className="h-5 w-auto mr-2" withGlow />
+                <span className="text-sm text-white">Official BSW 2025 Event</span>
+              </div>
+              <div className="text-gray-300 max-w-md">
+                The official hackathon of Boulder Startup Week 2025, bringing together developers, designers, and entrepreneurs.
+              </div>
+              <a 
+                href="https://boulderstartupweek.com/schedule/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="tertiary-button inline-flex items-center mt-3 py-1.5 px-4"
+              >
+                View All BSW Events
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-lg font-bold mb-4 flex items-center">
+              <span className="mr-2 rotate-hover inline-block">
+                <span className="text-blue-400">boulder</span><span className="text-white">.</span><span className="text-green-400">codes</span>
+              </span>
+              <span className="text-white/50 mx-2">×</span>
+              <BSWLogo variant="mark" className="w-auto h-5" withGlow />
+            </h3>
+            <div className="text-gray-400">
+              A collaboration between boulder.codes and Boulder Startup Week bringing you the official hackathon of BSW 2025.
+            </div>
+            <div className="text-gray-400 mt-2">
+              Join us for 5 days of building, learning, and networking at Boulder's premier startup event.
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-white text-lg font-bold mb-4 glow-text">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><Link href="/" className="text-gray-400 hover:text-[rgba(var(--bsw-blue),1)] transition-colors glow-text">Home</Link></li>
+              <li><Link href="/register" className="text-gray-400 hover:text-[rgba(var(--bsw-blue),1)] transition-colors glow-text">Register</Link></li>
+              <li><Link href="/schedule" className="text-gray-400 hover:text-[rgba(var(--bsw-blue),1)] transition-colors glow-text">Schedule</Link></li>
+              {/* Sponsors page hidden for now 
+              <li><Link href="/sponsors" className="text-gray-400 hover:text-[rgba(var(--bsw-blue),1)] transition-colors glow-text">Sponsors</Link></li>
+              */}
+              <li><a href="https://boulderstartupweek.com" target="_blank" rel="noopener noreferrer" className="fun-card inline-flex items-center px-3 py-1 text-sm mt-2 text-[rgba(var(--bsw-blue),1)]">
+                <BSWLogo variant="mark" className="h-4 w-auto mr-1" withGlow /> Boulder Startup Week
+              </a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-white text-lg font-bold mb-4 glow-text">Contact Us</h3>
+            <div className="text-gray-400 mb-2">
+              Have questions about the hackathon or BSW partnership?
+            </div>
+            <a href="mailto:bouldercodes@gmail.com" className="text-[rgba(var(--bsw-blue),1)] hover:text-blue-300 glow-text">
+              bouldercodes@gmail.com
+            </a>
+            
+            <div className="mt-6 fun-card p-3 inline-block">
+              <h4 className="text-white text-sm font-semibold mb-2 glow-text">Event Details</h4>
+              <div className="text-gray-300">
+                May 12-16, 2025<br />
+                Downtown Boulder<br />
+                Part of <a href="https://boulderstartupweek.com" target="_blank" rel="noopener noreferrer" className="text-[rgba(var(--bsw-blue),1)] hover:text-blue-300 inline-flex items-center glow-text">Boulder Startup Week <BSWLogo variant="mark" className="h-3 w-auto ml-1" withGlow /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-8 pt-8 border-t border-slate-800 text-center">
+          <div className="flex items-center justify-center">
+            <span>© {currentYear()}</span>
+            <span className="mx-2 rotate-hover inline-block">
+              <span className="text-blue-400">boulder</span><span className="text-gray-500">.</span><span className="text-green-400">codes</span>
+            </span>
+            <span className="text-gray-500 mx-2">×</span>
+            <a href="https://boulderstartupweek.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+              <BSWLogo variant="mark" className="h-4 w-auto" withGlow />
+            </a>
+          </div>
+          <div className="text-gray-500 mt-2">
+            Builders&apos; Room: The Official Hackathon of Boulder Startup Week 2025
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+};
 
 export default Footer;
