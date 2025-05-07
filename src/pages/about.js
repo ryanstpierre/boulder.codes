@@ -325,7 +325,7 @@ export default function About() {
                     Interested in partnering with boulder.codes to strengthen the developer community?
                   </p>
                   <a 
-                    href="mailto:info@boulder.codes" 
+                    href="https://discord.gg/JZFShvee" 
                     className="px-8 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-full text-base font-medium transition-colors inline-block"
                   >
                     Get in Touch
