@@ -90,8 +90,8 @@ export default function Register() {
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       <Head>
-        <title>Register | boulder.codes - Boulder Startup Week Builders&apos; Room</title>
-        <meta name="description" content="Register for the premier hackathon at Boulder Startup Week, hosted by boulder.codes" />
+        <title>Register | boulder.codes × BSW - The Official Hackathon of Boulder Startup Week 2025</title>
+        <meta name="description" content="Register for the Builders' Room - the official hackathon of Boulder Startup Week 2025, presented by boulder.codes in partnership with BSW." />
       </Head>
       
       <Navbar />
@@ -99,31 +99,39 @@ export default function Register() {
       <main className="container mx-auto px-4 py-24">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
+            <div className="inline-block px-4 py-1 rounded-full bg-[#0a8acd]/20 text-[#0a8acd] text-sm font-medium mb-4">
+              Official Boulder Startup Week 2025 Event
+            </div>
             <h1 className="text-4xl font-bold mb-4">Register for Builders&apos; Room</h1>
+            <h2 className="text-xl font-medium mb-4 text-[#0a8acd]">The Official Hackathon of Boulder Startup Week 2025</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Join us for an exciting 4-day hackathon experience during Boulder Startup Week
+              Join us for an exciting 5-day hackathon experience as part of the official Boulder Startup Week programming
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="md:col-span-2 bg-blue-900/30 border border-blue-700/30 rounded-lg p-5">
+            <div className="md:col-span-2 bg-[#0a8acd]/10 border border-[#0a8acd]/30 rounded-lg p-5">
               <div className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#0a8acd] mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                  <h3 className="text-lg font-medium text-blue-300 mb-2">Registration Information</h3>
+                  <h3 className="text-lg font-medium text-[#0a8acd] mb-2">Registration Information</h3>
                   <ul className="text-gray-300 space-y-1">
-                    <li>• Event runs Monday, May 12th through Thursday, May 15th</li>
+                    <li>• Event runs Monday, May 12th through Friday, May 16th</li>
                     <li>• Registration fee: $50 (waived for students with valid ID)</li>
                     <li>• Space is limited to 100 participants</li>
                     <li>• All meals and snacks included</li>
+                    <li>• Locations: Galvanize (kickoff/closeout) and Canyon Center (BSW HQ)</li>
                     <li>• You'll receive a confirmation email after registering</li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div className="h-60 md:h-auto rounded-lg overflow-hidden">
+            <div className="h-60 md:h-auto rounded-lg overflow-hidden relative">
+              <div className="absolute top-2 right-2 bg-[#0a8acd] text-white text-xs px-2 py-1 rounded-md font-medium z-10">
+                BSW 2025
+              </div>
               <img 
                 src="/images/BSW_Builders_Room%20-%2020.jpeg" 
                 alt="Hackathon Participants" 
@@ -135,24 +143,56 @@ export default function Register() {
         
         {submitSuccess ? (
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-green-900/80 to-blue-900/80 backdrop-blur-sm p-8 rounded-lg text-center shadow-xl border border-green-700/50 mb-8">
-              <div className="h-20 w-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-gradient-to-br from-[#0a8acd]/20 to-blue-900/80 backdrop-blur-sm p-8 rounded-lg text-center shadow-xl border border-[#0a8acd]/50 mb-8">
+              <div className="h-20 w-20 bg-[#0a8acd]/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-[#0a8acd]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
               <h2 className="text-2xl font-bold mb-4">Registration Successful!</h2>
-              <p className="mb-6 text-gray-300">
+              <div className="inline-block px-4 py-1 rounded-full bg-[#0a8acd]/20 text-[#0a8acd] text-sm font-medium mb-4">
+                Official Boulder Startup Week 2025 Event
+              </div>
+              <p className="mb-4 text-gray-300">
                 Thank you for registering for the Builders' Room hackathon. We've sent a confirmation email to your inbox with all the details you'll need.
               </p>
-              <p className="text-green-300 mb-8">We can't wait to see what you'll build!</p>
+              <div className="bg-[#0a8acd]/10 border border-[#0a8acd]/30 rounded-lg p-4 mb-6">
+                <h3 className="font-medium text-[#0a8acd] mb-2">Important Next Steps:</h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#0a8acd] mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <div>
+                      <span className="font-medium">RSVP on Sched</span>: Please 
+                      <a href="https://boulderstartupweek2025.sched.com/event/21iLy/builders-room-kickoff-bsw-hackathon" target="_blank" rel="noopener noreferrer" className="text-[#0a8acd] hover:underline mx-1">
+                        click here to RSVP for the kickoff event
+                      </a>
+                      so we can get an accurate headcount
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#0a8acd] mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                    </svg>
+                    <div>
+                      <span className="font-medium">Join Discord</span>: Connect with other participants on the
+                      <a href="https://discord.gg/bouldercodes" target="_blank" rel="noopener noreferrer" className="text-[#0a8acd] hover:underline mx-1">
+                        boulder.codes Discord
+                      </a>
+                      for pre-event networking
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p className="text-[#0a8acd] mb-8">We can't wait to see what you'll build at the official BSW hackathon!</p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-                <Link href="/schedule" className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-colors">
+                <Link href="/schedule" className="px-6 py-2 bg-[#0a8acd] hover:bg-[#0a8acd]/80 text-white rounded-full font-medium transition-colors">
                   View Event Schedule
                 </Link>
-                <a href="https://boulderstartupweek.com/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full font-medium transition-colors">
-                  Explore BSW Events
+                <a href="https://boulderstartupweek2025.sched.com/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full font-medium transition-colors">
+                  Browse BSW Events
                 </a>
               </div>
             </div>
@@ -410,8 +450,8 @@ export default function Register() {
                 disabled={isSubmitting}
                 className={`flex-1 py-3 px-4 text-center font-bold rounded-lg text-white transition-all ${
                   isSubmitting 
-                    ? 'bg-blue-800 cursor-not-allowed' 
-                    : 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-blue-600/20'
+                    ? 'bg-[#0a8acd]/70 cursor-not-allowed' 
+                    : 'bg-[#0a8acd] hover:bg-[#0a8acd]/80 shadow-lg hover:shadow-[#0a8acd]/20'
                 }`}
               >
                 {isSubmitting ? (
@@ -422,16 +462,19 @@ export default function Register() {
                     </svg>
                     Submitting...
                   </span>
-                ) : 'Register for the Hackathon'}
+                ) : 'Register for the BSW Hackathon'}
               </button>
               
               <a 
-                href="https://boulderstartupweek.com/" 
+                href="https://boulderstartupweek.com/schedule/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3 px-4 text-center font-bold rounded-lg text-white bg-slate-700 hover:bg-slate-600 transition-all text-center"
+                className="flex-1 py-3 px-4 text-center font-bold rounded-lg text-white bg-slate-700 hover:bg-slate-600 transition-all text-center flex items-center justify-center"
               >
-                View BSW Schedule
+                <span>View BSW Schedule</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
               </a>
             </div>
           </form>
@@ -439,8 +482,8 @@ export default function Register() {
         
         <div className="max-w-3xl mx-auto mt-16 text-center">
           <p className="text-gray-400">
-            Questions about registration? Contact us at{' '}
-            <a href="mailto:builders@boulder.codes" className="text-blue-400 hover:underline">builders@boulder.codes</a>
+            Questions about registration? Contact Ryan at{' '}
+            <a href="mailto:ryan@thresholdlabs.io" className="text-blue-400 hover:underline">ryan@thresholdlabs.io</a>
           </p>
         </div>
       </main>

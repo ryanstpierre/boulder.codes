@@ -136,6 +136,27 @@ Authorization: Bearer YOUR_API_KEY_HERE
 
 The registration data is stored securely in Cloudflare's D1 database and can be queried using Cloudflare's dashboard or API.
 
+### Setting up Email Confirmations with Resend
+
+The site sends confirmation emails to registered participants using [Resend](https://resend.com). To set up email confirmations:
+
+1. Create an account at [resend.com](https://resend.com)
+2. Create a new API key in your Resend dashboard
+3. Add the API key to your Cloudflare environment:
+
+```bash
+# Using Wrangler CLI
+npx wrangler secret put RESEND_API_KEY
+# Then paste your API key when prompted
+```
+
+Alternatively, you can add the secret via the Cloudflare dashboard:
+1. Go to Workers & Pages > Your Project > Settings > Environment variables
+2. Add a new variable named `RESEND_API_KEY` with your Resend API key as the value
+3. Set the environment to "Production" and/or "Preview" as needed
+
+Once configured, confirmation emails will be sent automatically when users register for the hackathon.
+
 ## Customization
 
 ### Sponsors

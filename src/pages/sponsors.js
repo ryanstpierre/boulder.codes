@@ -5,8 +5,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function Sponsors() {
-  // 2024 Sponsors
-  const sponsors2024 = [
+  // 2025 Sponsors
+  const sponsors2025 = [
     { name: "Zed", logo: "/images/sponsors/zed.png", url: "https://zed.dev" },
     { name: "Technical Integrity", logo: "/images/sponsors/technical-integrity.png", url: "https://technicalintegrity.com/" },
     { name: "Viget", logo: "/images/sponsors/viget.png", url: "https://www.viget.com/" },
@@ -107,15 +107,15 @@ export default function Sponsors() {
             </p>
           </div>
           
-          {/* 2024 Sponsors Section */}
+          {/* 2025 Sponsors Section */}
           <div className="bg-gradient-to-br from-indigo-900/30 to-purple-900/30 backdrop-blur-sm border border-indigo-700/50 rounded-2xl p-8 max-w-5xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">
-              <span className="font-fun text-pink-400 text-4xl transform rotate-1 inline-block mr-2">2024</span>
+              <span className="font-fun text-pink-400 text-4xl transform rotate-1 inline-block mr-2">2025</span>
               <span className="text-white">Sponsors</span>
             </h2>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {sponsors2024.map((sponsor, index) => (
+              {sponsors2025.map((sponsor, index) => (
                 <a 
                   key={index} 
                   href={sponsor.url} 
@@ -233,7 +233,7 @@ export default function Sponsors() {
               </div>
               
               <div className="bg-gradient-to-br from-blue-900/30 to-indigo-900/30 backdrop-blur-sm border border-blue-800/30 rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-4 text-blue-300">2024 Special Benefits</h3>
+                <h3 className="text-xl font-bold mb-4 text-blue-300">2025 Special Benefits</h3>
                 <p className="text-gray-300 mb-4">
                   This year, sponsors get extra visibility through our integration with Boulder Startup Week:
                 </p>
