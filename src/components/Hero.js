@@ -5,23 +5,8 @@ import ForceGraph from './ForceGraph';
 
 const Hero = () => {
   const [currentPhase, setCurrentPhase] = useState(0);
-  const [showDetails, setShowDetails] = useState(false);
-  const [showUniverse, setShowUniverse] = useState(true); // Default to true (show starfield with labels)
+  const [showUniverse, setShowUniverse] = useState(false); // Default to false to show details
   const forceGraphRef = useRef(null);
-  
-  // Automatically show details after a delay
-  useEffect(() => {
-    // First, show the universe
-    setShowUniverse(true);
-    
-    // Then, after a delay, show details by turning off universe mode
-    const timer = setTimeout(() => {
-      setShowDetails(true);
-      setShowUniverse(false);
-    }, 4500); // Show details after 4.5 seconds
-    
-    return () => clearTimeout(timer);
-  }, []);
   
   // Handle animation cycle - faster than before
   useEffect(() => {
@@ -184,8 +169,8 @@ const Hero = () => {
           </div>
         </div>
             
-        {/* Event details - hidden in universe mode, visible otherwise, with animation */}
-        <div className={`transition-all duration-1000 transform ${!showUniverse && showDetails ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
+        {/* Event details - always visible */}
+        <div className="transition-all duration-1000 transform opacity-100 translate-y-0">
           {/* Boulder Startup Week Builders' Room Combined Logo */}
           {/* Unified simplified card layout that's shorter */}
           <div className="flex flex-col items-center justify-center mb-6 sm:mb-10">
