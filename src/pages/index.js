@@ -202,17 +202,17 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-blue-300">🚀 Day 1: Monday, May 12</h3>
                   <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">10:00 AM</span>
-                      <span>🚀 Hackathon Kickoff</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">10:00 AM</span>
+                      <span className="text-white">🚀 Hackathon Kickoff</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">12:00 PM</span>
-                      <span>🍽️ Networking Lunch</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">12:00 PM</span>
+                      <span className="text-white">🍽️ Networking Lunch</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">5:00 PM</span>
-                      <span>✅ Team Check-in</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">5:00 PM</span>
+                      <span className="text-white">✅ Team Check-in</span>
                     </li>
                   </ul>
                 </div>
@@ -220,17 +220,17 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-blue-300">💻 Day 2: Tuesday, May 13</h3>
                   <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">9:00 AM</span>
-                      <span>☕ Morning Check-in</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">9:00 AM</span>
+                      <span className="text-white">☕ Morning Check-in</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">1:00 PM</span>
-                      <span>🧠 Mentor Office Hours</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">1:00 PM</span>
+                      <span className="text-white">🧠 Mentor Office Hours</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">5:00 PM</span>
-                      <span>📢 Daily Standup</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">5:00 PM</span>
+                      <span className="text-white">📢 Daily Standup</span>
                     </li>
                   </ul>
                 </div>
@@ -238,17 +238,17 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-blue-300">⚙️ Day 3: Wednesday, May 14</h3>
                   <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">9:00 AM</span>
-                      <span>☕ Morning Check-in</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">9:00 AM</span>
+                      <span className="text-white">☕ Morning Check-in</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">1:00 PM</span>
-                      <span>🧠 Mentor Sessions</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">1:00 PM</span>
+                      <span className="text-white">🧠 Mentor Sessions</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">5:00 PM</span>
-                      <span>📈 Progress Updates</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">5:00 PM</span>
+                      <span className="text-white">📈 Progress Updates</span>
                     </li>
                   </ul>
                 </div>
@@ -256,17 +256,17 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-blue-300">🎭 Day 4: Thursday, May 15</h3>
                   <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">9:00 AM</span>
-                      <span>☕ Breakfast</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">9:00 AM</span>
+                      <span className="text-white">☕ Breakfast</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">3:00 PM</span>
-                      <span>🎭 Project Presentations</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">3:00 PM</span>
+                      <span className="text-white">🎭 Project Presentations</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="font-bold w-16 text-gray-400">5:00 PM</span>
-                      <span>🏆 Awards & Recognition</span>
+                    <li className="flex items-center gap-3">
+                      <span className="font-mono text-gray-300 min-w-[4.5rem]">5:00 PM</span>
+                      <span className="text-white">🏆 Awards & Recognition</span>
                     </li>
                   </ul>
                 </div>
@@ -275,17 +275,17 @@ export default function Home() {
               <div className="mt-6">
                 <h3 className="text-xl font-bold mb-4 text-blue-300">🌐 Day 5: Friday, May 16</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="font-bold w-32 text-gray-400">9:00 AM - 3:00 PM</span>
-                    <span>🌐 BSW Sessions</span>
+                  <li className="flex items-center gap-3">
+                    <span className="font-mono text-gray-300 min-w-[8rem]">9:00 AM - 3:00 PM</span>
+                    <span className="text-white">🌐 BSW Sessions</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="font-bold w-32 text-gray-400">3:00 PM</span>
-                    <span>🎭 Project Showcase</span>
+                  <li className="flex items-center gap-3">
+                    <span className="font-mono text-gray-300 min-w-[4.5rem]">3:00 PM</span>
+                    <span className="text-white">🎭 Project Showcase</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="font-bold w-32 text-gray-400">5:00 PM</span>
-                    <span>🎉 BSW Closing Party</span>
+                  <li className="flex items-center gap-3">
+                    <span className="font-mono text-gray-300 min-w-[4.5rem]">5:00 PM</span>
+                    <span className="text-white">🎉 BSW Closing Party</span>
                   </li>
                 </ul>
               </div>
