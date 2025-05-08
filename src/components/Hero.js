@@ -104,7 +104,7 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="relative z-20 text-center px-4 max-w-5xl">
+      <div className="relative z-20 text-center px-4 max-w-5xl mt-36 mb-24 sm:mt-0">
         {/* Main tagline first, always visible */}
         <div className="font-medium mb-14 text-white max-w-3xl mx-auto leading-relaxed relative">
           <div className="mb-6 relative flex flex-wrap justify-center items-center min-h-[150px]">
@@ -251,7 +251,7 @@ const Hero = () => {
             </a>
           </div>
           
-          <div className="mt-16 flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-4 text-sm text-white">
+          <div className="hidden md:flex mt-16 flex-wrap justify-center items-center gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-4 text-sm text-white">
             <div className="flex items-center fun-card px-4 py-2 border-[#6BA0D8] shadow-[0_0_15px_rgba(10,138,205,0.3)] bg-[rgba(10,35,80,0.3)] backdrop-blur-sm">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-[#7ECBFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
