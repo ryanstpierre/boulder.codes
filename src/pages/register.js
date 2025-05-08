@@ -119,7 +119,7 @@ export default function Register() {
                   <h3 className="text-lg font-medium text-[#0a8acd] mb-2">Registration Information</h3>
                   <ul className="text-gray-300 space-y-1">
                     <li>• Event runs Monday, May 12th through Friday, May 16th</li>
-                    <li>• Registration fee: $50 (waived for students with valid ID)</li>
+                    <li>• Registration fee: $0 </li>
                     <li>• Space is limited to 100 participants</li>
                     <li>• All meals and snacks included</li>
                     <li>• Locations: Galvanize (kickoff/closeout) and Canyon Center (BSW HQ)</li>
@@ -482,8 +482,8 @@ export default function Register() {
         
         <div className="max-w-3xl mx-auto mt-16 text-center">
           <p className="text-gray-400">
-            Questions about registration? Contact Ryan at{' '}
-            <a href="mailto:ryan@thresholdlabs.io" className="text-blue-400 hover:underline">ryan@thresholdlabs.io</a>
+            Questions about registration? Contact us at{' '}
+            <a href="mailto:hello@boulder.codes" className="text-blue-400 hover:underline">hello@boulder.codes</a>
           </p>
         </div>
       </main>

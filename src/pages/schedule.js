@@ -94,7 +94,7 @@ export default function Schedule() {
         <p className="text-xl text-center max-w-3xl mx-auto mb-8">
           Join us for a 5-day startup experience as part of BSW's official programming
         </p>
-        <div className="bg-[#0a8acd]/10 border border-[#0a8acd]/30 rounded-lg p-6 mb-16 max-w-3xl mx-auto">
+        {/* <div className="bg-[#0a8acd]/10 border border-[#0a8acd]/30 rounded-lg p-6 mb-16 max-w-3xl mx-auto">
           <h3 className="text-lg font-medium text-[#0a8acd] mb-2">💡 A Flexible Hackathon Experience with BSW Integration</h3>
           <p className="text-gray-300 mb-3">
             We've designed this event to accommodate 30-70 participants with a loose, adaptable structure. The schedule highlights 
@@ -105,21 +105,7 @@ export default function Schedule() {
             Float between teams, make new connections, and enjoy the full Boulder Startup Week experience."
           </p>
           
-          <div className="relative mt-8 mb-8 transform -rotate-1 scale-105">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#FF3CBD] via-[#FF9E3C] to-[#FFDE3C] rounded-xl blur-xl opacity-30 animate-pulse"></div>
-            <div className="relative bg-slate-800 border-2 border-[#FFDE3C] rounded-xl p-5 shadow-xl">
-              <div className="flex flex-col md:flex-row items-center gap-4">
-                <div className="text-4xl md:text-6xl">🎯 💬 🎪</div>
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Want to attend lots of BSW talks? No problem!</h3>
-                  <p className="text-blue-300 text-lg mb-2">Join the hackathon Discord and build while attending as many sessions as you like!</p>
-                  <p className="text-gray-300">Our flexible format means you can pop in and out of the workspace, collaborate remotely, and still be fully part of the hackathon experience. The best of both worlds!</p>
-                </div>
-              </div>
-              <div className="absolute -top-3 -right-2 text-3xl">✨</div>
-              <div className="absolute -bottom-2 -left-3 text-3xl transform rotate-12">🚀</div>
-            </div>
-          </div>
+
           
           <div className="mt-4 bg-white/10 backdrop-blur-sm p-4 rounded-lg shadow">
             <div className="flex items-center">
@@ -135,6 +121,23 @@ export default function Schedule() {
               </svg>
               BSW Event</span> cards throughout the schedule. These optional Boulder Startup Week sessions complement the hackathon and provide excellent learning and networking opportunities.
             </p>
+          </div>
+        </div> */}
+        <div className="bg-[#0a8acd]/10 border border-[#0a8acd]/30 rounded-lg p-6 mb-16 max-w-3xl mx-auto">
+          <div className="relative mt-8 mb-8 transform -rotate-1 scale-105">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#FF3CBD] via-[#FF9E3C] to-[#FFDE3C] rounded-xl blur-xl opacity-30 animate-pulse"></div>
+            <div className="relative bg-slate-800 border-2 border-[#FFDE3C] rounded-xl p-5 shadow-xl">
+              <div className="flex flex-col md:flex-row items-center gap-4">
+                <div className="text-4xl md:text-6xl">🎯 💬 🎪</div>
+                <div className="flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Want to attend lots of BSW talks? No problem!</h3>
+                  <p className="text-blue-300 text-lg mb-2">Join the hackathon Discord and build while attending as many sessions as you like!</p>
+                  <p className="text-gray-300">Our flexible format means you can pop in and out of the workspace, collaborate remotely, and still be fully part of the hackathon experience. The best of both worlds!</p>
+                </div>
+              </div>
+              <div className="absolute -top-3 -right-2 text-3xl">✨</div>
+              <div className="absolute -bottom-2 -left-3 text-3xl transform rotate-12">🚀</div>
+            </div>
           </div>
         </div>
         
@@ -389,11 +392,6 @@ export default function Schedule() {
                   alt="Event Space" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-0 right-0 p-4">
-                  <div className="bg-purple-500/30 backdrop-blur-sm p-3 rounded-lg inline-block">
-                    <p className="text-white text-xs">Representative image - actual venue may vary</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

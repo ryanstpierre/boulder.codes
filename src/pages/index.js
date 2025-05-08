@@ -57,7 +57,7 @@ export default function Home() {
         <Hero />
         
         {/* Explore the Universe Button */}
-        <div className="flex justify-center -mt-20 mb-10 relative z-30">
+        {/* <div className="flex justify-center -mt-20 mb-10 relative z-30">
           <button 
             onClick={() => setShowFullGraph(true)}
             className="bg-slate-800/80 backdrop-blur-md hover:bg-slate-700/80 text-white font-medium py-3 px-5 rounded-full flex items-center gap-2 transition-all border border-blue-500/30 shadow-lg hover:shadow-blue-500/20 transform hover:scale-105"
@@ -68,7 +68,7 @@ export default function Home() {
               <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
           </button>
-        </div>
+        </div> */}
         
         {/* Fullscreen Force Graph Modal */}
         {showFullGraph && (

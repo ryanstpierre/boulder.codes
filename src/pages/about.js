@@ -64,15 +64,34 @@ export default function About() {
     },
   ];
 
-  const partners = [
-    "Boulder Startup Week", 
-    "CU Boulder", 
-    "Techstars", 
-    "Google", 
-    "Galvanize", 
-    "Code for Boulder",
-    "Front Range WICS"
-  ];
+  const partners = [{
+    name: "Boulder Startup Week",
+    logo: "/images/bsw.svg",
+    url: "https://boulderstartupweek.com"
+  },
+  {
+    name: "JayScott Systems",
+    logo: "/images/sponsors/jayscott-systems.png",
+    url: "https://jayscottsystems.com"
+  },
+  {
+    name: "CU Boulder",
+    logo: "/images/sponsors/cu-boulder.png",
+    url: "https://www.colorado.edu"
+  },
+  {
+    name: "Techstars",
+    logo: "/images/sponsors/techstars.png",
+    url: "https://www.techstars.com"
+  }, {
+    name: "Zed Industries",
+    logo: "/images/sponsors/zed.png",
+    url: "https://zed.dev"
+  }, {
+    name: "Technical Integrity",
+    logo: "/images/sponsors/technical-integrity.png",
+    url: "https://technicalintegrity.com"
+  }];
 
   return (
     <div className="min-h-screen bg-slate-900 text-white">
@@ -304,7 +323,7 @@ export default function About() {
         <section className="py-24">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">Our Partners</h2>
+              <h2 className="text-4xl font-bold mb-6">Our Friends</h2>
               <p className="text-xl text-gray-300">
                 Collaborating with organizations across the Front Range to strengthen our tech community
               </p>
@@ -312,11 +331,23 @@ export default function About() {
             
             <div className="max-w-4xl mx-auto">
               <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
-                <div className="flex flex-wrap justify-center gap-8">
-                  {partners.map((partner, index) => (
-                    <div key={index} className="bg-white/10 rounded-lg py-3 px-6 text-center backdrop-blur-sm">
-                      <span className="font-medium text-white">{partner}</span>
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {partners.map(({ name, logo, url }, index) => (
+                    <a 
+                      key={index} 
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white/10 rounded-lg p-3 text-center backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group block"
+                    >
+                      <div className="relative w-48 h-24 mx-auto">
+                        <img 
+                          src={logo} 
+                          alt={`${name} logo`}
+                          className="object-contain w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
+                        />
+                      </div>
+                    </a>
                   ))}
                 </div>
                 
@@ -325,7 +356,7 @@ export default function About() {
                     Interested in partnering with boulder.codes to strengthen the developer community?
                   </p>
                   <a 
-                    href="https://discord.gg/JZFShvee" 
+                    href="mailto:hello@boulder.codes"
                     className="px-8 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-full text-base font-medium transition-colors inline-block"
                   >
                     Get in Touch
@@ -381,10 +412,9 @@ export default function About() {
                     Monthly updates on events, initiatives, and community highlights.
                   </p>
                   <a 
-                    href="#" 
                     className="text-green-400 hover:text-green-300 font-medium inline-flex items-center"
                   >
-                    Subscribe
+                    Coming Soon
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -400,10 +430,9 @@ export default function About() {
                     Contribute to our open source projects and community resources.
                   </p>
                   <a 
-                    href="#" 
                     className="text-purple-400 hover:text-purple-300 font-medium inline-flex items-center"
                   >
-                    View Projects
+                    Coming Soon
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>

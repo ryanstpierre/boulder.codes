@@ -91,8 +91,8 @@ const Footer = () => {
             <div className="text-gray-400 mb-2">
               Have questions about the hackathon or BSW partnership?
             </div>
-            <a href="mailto:bouldercodes@gmail.com" className="text-[rgba(var(--bsw-blue),1)] hover:text-blue-300 glow-text">
-              bouldercodes@gmail.com
+            <a href="mailto:hello@boulder.codes" className="text-[rgba(var(--bsw-blue),1)] hover:text-blue-300 glow-text">
+              hello@boulder.codes
             </a>
             
             <div className="mt-6 fun-card p-3 inline-block">
