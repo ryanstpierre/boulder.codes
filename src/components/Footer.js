@@ -80,27 +80,28 @@ const Footer = () => {
               {/* Sponsors page hidden for now 
               <li><Link href="/sponsors" className="text-gray-400 hover:text-[rgba(var(--bsw-blue),1)] transition-colors glow-text">Sponsors</Link></li>
               */}
-              <li><a href="https://boulderstartupweek.com" target="_blank" rel="noopener noreferrer" className="fun-card inline-flex items-center px-3 py-1 text-sm mt-2 text-[rgba(var(--bsw-blue),1)]">
-                <BSWLogo variant="mark" className="h-4 w-auto mr-1" withGlow /> Boulder Startup Week
-              </a></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-white text-lg font-bold mb-4 glow-text">Contact Us</h3>
-            <div className="text-gray-400 mb-2">
+            <div className="text-gray-400 mb-4">
               Have questions about the hackathon or BSW partnership?
             </div>
-            <a href="mailto:bouldercodes@gmail.com" className="text-[rgba(var(--bsw-blue),1)] hover:text-blue-300 glow-text">
-              bouldercodes@gmail.com
+            
+            <a 
+              href="mailto:hello@boulder.codes" 
+              className="text-[rgba(var(--bsw-blue),1)] hover:text-blue-300 inline-flex items-center mb-4 glow-text"
+            >
+              hello@boulder.codes
             </a>
             
-            <div className="mt-6 fun-card p-3 inline-block">
+            <div className="fun-card p-3 w-full">
               <h4 className="text-white text-sm font-semibold mb-2 glow-text">Event Details</h4>
               <div className="text-gray-300">
                 May 12-16, 2025<br />
                 Downtown Boulder<br />
-                Part of <a href="https://boulderstartupweek.com" target="_blank" rel="noopener noreferrer" className="text-[rgba(var(--bsw-blue),1)] hover:text-blue-300 inline-flex items-center glow-text">Boulder Startup Week <BSWLogo variant="mark" className="h-3 w-auto ml-1" withGlow /></a>
+                Part of <a href="https://boulderstartupweek.com" target="_blank" rel="noopener noreferrer" className="text-[rgba(var(--bsw-blue),1)] hover:text-blue-300 inline-flex items-center glow-text">Boulder Startup Week </a>
               </div>
             </div>
           </div>
