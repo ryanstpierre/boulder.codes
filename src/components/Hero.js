@@ -220,10 +220,10 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-4 mx-auto max-w-2xl md:max-w-3xl">
             <Link
-              href="/register"
+              href="/community"
               className="primary-button w-full sm:w-auto"
             >
-              Register Now! ✨
+              Join the Community! ✨
             </Link>
             <Link
               href="/schedule"

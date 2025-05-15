@@ -83,12 +83,12 @@ const Navbar = () => {
               </svg>
             </a>
 
-            {/* Register button */}
+            {/* Join Community button */}
             <Link
-              href="/register"
+              href="/community"
               className="primary-button font-medium px-6 py-2.5 ml-6"
             >
-              Register Now ✨
+              Join the Community ✨
             </Link>
           </div>
 
@@ -191,13 +191,13 @@ const Navbar = () => {
               </a>
             </div>
 
-            {/* Mobile Register Now button */}
+            {/* Mobile Join Community button */}
             <Link
-              href="/register"
+              href="/community"
               className="primary-button mt-2 text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Register Now ✨
+              Join the Community ✨
             </Link>
           </div>
         </div>
