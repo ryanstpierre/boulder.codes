@@ -15,8 +15,8 @@ const nextConfig = {
   // Trailing slash for better compatibility
   trailingSlash: true,
   
-  // Static export for Cloudflare Pages
-  output: 'export',
+  // Static export for Cloudflare Pages (production only)
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
   
   // Disable source maps in production
   productionBrowserSourceMaps: false,
