@@ -7,6 +7,10 @@
  */
 export function getApiUrl(endpoint) {
   // Use relative URLs which work in both development and production
+  // For development, ensure we're using the right port
+  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+    return `http://localhost:3000/api/${endpoint}`;
+  }
   return `/api/${endpoint}`;
 }
 

@@ -1,4 +1,5 @@
 // API route for fetching public community member profiles
+// This is the Next.js version for local development
 import { createClient } from '@supabase/supabase-js';
 
 // Initialize Supabase client
