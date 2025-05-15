@@ -165,3 +165,31 @@ export async function administerTag(apiKey, action, tagData) {
     throw error;
   }
 }
+
+/**
+ * Fetch community members (public endpoint)
+ * 
+ * @returns {Promise<Array>} - Array of community members
+ */
+export async function fetchCommunityMembers() {
+  try {
+    const url = getApiUrl('community/members');
+    
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch community members (${response.status})`);
+    }
+    
+    const result = await response.json();
+    
+    if (!result.success) {
+      throw new Error(result.error || 'Failed to fetch community members');
+    }
+    
+    return result.data || [];
+  } catch (error) {
+    console.error('Error fetching community members:', error);
+    throw error;
+  }
+}
