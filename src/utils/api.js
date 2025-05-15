@@ -59,7 +59,9 @@ export async function fetchTags(options = {}) {
  */
 export async function registerWithTags(formData) {
   try {
-    const url = getApiUrl('register-with-tags');
+    // Determine the appropriate endpoint based on registration type
+    const endpoint = formData.registrationType === 'community' ? 'community/register' : 'register-with-tags';
+    const url = getApiUrl(endpoint);
     
     const response = await fetch(url, {
       method: 'POST',

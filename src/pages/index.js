@@ -475,10 +475,10 @@ export default function Home() {
                 </div>
                 <div className="md:flex-shrink-0">
                   <Link 
-                    href="/register" 
+                    href="/community" 
                     className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all inline-block shadow-lg hover:shadow-blue-900/30 transform hover:scale-105"
                   >
-                    Join This Year's Experience
+                    Join the Community
                   </Link>
                 </div>
               </div>
