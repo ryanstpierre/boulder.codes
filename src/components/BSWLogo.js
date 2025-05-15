@@ -20,6 +20,7 @@ const BSWLogo = ({ variant = 'full', className = '', withGlow = false }) => {
           width={24} 
           height={28} 
           className={`h-6 w-auto transition-transform duration-300 ${glowEffect}`}
+          priority={false}
         />
       </div>
     );
@@ -34,6 +35,7 @@ const BSWLogo = ({ variant = 'full', className = '', withGlow = false }) => {
         width={30} 
         height={36} 
         className={`h-7 w-auto mr-2 transition-transform duration-300 group-hover:scale-110 ${glowEffect}`}
+        priority={false}
       />
       
       {/* Text part of the logo */}

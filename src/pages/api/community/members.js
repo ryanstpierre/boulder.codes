@@ -5,6 +5,15 @@ import { createClient } from '@supabase/supabase-js';
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+// Add logging to debug
+console.log('Supabase URL:', supabaseUrl ? 'Set' : 'Not set');
+console.log('Supabase Key:', supabaseAnonKey ? 'Set' : 'Not set');
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('Missing Supabase configuration');
+}
+
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 /**
@@ -12,12 +21,24 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
  * This is a public endpoint that doesn't require authentication
  */
 export default async function handler(req, res) {
+  console.log('Community members API called');
+  
   if (req.method !== 'GET') {
     return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
+  // Check if Supabase is properly configured
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return res.status(500).json({
+      success: false,
+      error: 'Server configuration error - missing Supabase credentials'
+    });
+  }
+
   try {
     // Query the community_members view
+    console.log('Querying community_members view...');
+    
     let query = supabase
       .from('community_members')
       .select('*')
@@ -29,9 +50,12 @@ export default async function handler(req, res) {
       console.error('Error fetching community members:', error);
       return res.status(500).json({
         success: false,
-        error: 'Failed to fetch community members'
+        error: `Database error: ${error.message}`,
+        details: error
       });
     }
+
+    console.log(`Found ${members?.length || 0} community members`);
 
     // Return the community members
     return res.status(200).json({
@@ -43,7 +67,8 @@ export default async function handler(req, res) {
     console.error('Unexpected error:', error);
     return res.status(500).json({
       success: false,
-      error: 'An unexpected error occurred'
+      error: 'An unexpected error occurred',
+      details: error.message
     });
   }
 }
