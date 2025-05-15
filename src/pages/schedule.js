@@ -51,25 +51,24 @@ export default function Schedule() {
     },
     {
       date: "Thursday, May 15th, 2025",
-      name: "Day 4: Final Touches & Presentations",
+      name: "Day 4: Final Touches & Informal Demos",
       events: [
         { time: "9:00 AM", title: "Breakfast", description: "Coffee and breakfast provided for the final full day of work", highlight: true },
         { time: "9:00 AM - 12:00 PM", title: "Final Development", description: "Last chance to complete core functionality and prepare for presentations", flexible: true },
         { time: "12:00 PM", title: "Lunch & Presentation Prep", description: "Lunch provided while teams finalize their presentation materials", highlight: true },
         { time: "12:00 PM onward", title: "Project Completion", description: "Final work time or option to attend BSW events", flexible: true },
         { time: "11:00 AM", title: "BSW Event: Building AI Products That Work", description: "Learn practical AI implementation strategies at Sovrn", muted: true, bsw: true },
-        { time: "3:00 PM", title: "Project Presentations", description: "Teams present their completed projects to judges, mentors, and fellow participants", highlight: true, special: true },
-        { time: "5:00 PM", title: "Awards & Recognition", description: "Hackathon projects will be recognized and awarded in multiple categories", highlight: true, special: true },
+        { time: "3:00 PM", title: "Informal Wrap-up", description: "Teams share demos and get feedback at Galvanize (1023 Walnut St)", highlight: true, special: true },
       ]
     },
     {
       date: "Friday, May 16th, 2025",
-      name: "Day 5: BSW Integration",
+      name: "Day 5: Hackathon Showcase",
       events: [
-        { time: "9:00 AM - 3:00 PM", title: "BSW Sessions", description: "Attend Boulder Startup Week events and connect with the broader startup community", flexible: true },
+        { time: "9:00 AM - 12:00 PM", title: "BSW Sessions", description: "Attend Boulder Startup Week events and connect with the broader startup community", flexible: true },
         { time: "9:00 AM", title: "BSW Event: Reinforcement Learning for Agents", description: "Deep dive into RL techniques for AI applications at Sovrn", muted: true, bsw: true },
-        { time: "3:00 PM", title: "Project Showcase", description: "Present your project to Boulder's tech community at a dedicated BSW session", highlight: true, special: true },
-        { time: "5:00 PM onward", title: "BSW Closing Party", description: "Join the official Boulder Startup Week closing event with other participants, mentors, and the BSW community", highlight: true },
+        { time: "12:00 PM - 1:00 PM", title: "Hackathon Showcase & Awards", description: "Teams present final projects and receive awards at Kiln (2101 Pearl St). View the official event on the BSW schedule: https://boulderstartupweek2025.sched.com/event/23b3n/builders-room-hackathon-showcase", highlight: true, special: true },
+        { time: "5:00 PM onward", title: "Friday Night Closing Parties 🎉", description: "Celebrate an amazing week at various venues throughout Boulder! Connect, reflect, and toast to new friendships and collaborations", highlight: true, special: true },
       ]
     }
   ];
