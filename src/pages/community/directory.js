@@ -56,8 +56,8 @@ export default function CommunityDirectory() {
     if (searchTerm.trim()) {
       const term = searchTerm.toLowerCase().trim();
       filtered = filtered.filter(member => 
-        member.firstName.toLowerCase().includes(term) ||
-        member.lastName.toLowerCase().includes(term) ||
+        (member.firstName || member.first_name || '').toLowerCase().includes(term) ||
+        (member.lastName || member.last_name || '').toLowerCase().includes(term) ||
         member.company?.toLowerCase().includes(term) ||
         member.skills?.toLowerCase().includes(term) ||
         member.interests?.toLowerCase().includes(term) ||
@@ -305,7 +305,7 @@ export default function CommunityDirectory() {
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <h3 className="text-xl font-bold">
-                          {member.firstName} {member.lastName}
+                          {member.firstName || member.first_name} {member.lastName || member.last_name}
                         </h3>
                         <p className="text-gray-400">{member.role}</p>
                         {member.company && (
@@ -314,7 +314,7 @@ export default function CommunityDirectory() {
                       </div>
                       
                       <div className="h-12 w-12 rounded-full bg-slate-700 flex items-center justify-center text-2xl font-bold text-[#0a8acd]">
-                        {member.firstName.charAt(0)}{member.lastName.charAt(0)}
+                        {(member.firstName || member.first_name || '?').charAt(0)}{(member.lastName || member.last_name || '?').charAt(0)}
                       </div>
                     </div>
                     
