@@ -1,3 +1,5 @@
+import { createClient } from '@supabase/supabase-js';
+
 export async function onRequest(context) {
   const { request, env } = context;
   
@@ -12,6 +14,23 @@ export async function onRequest(context) {
   }
 
   try {
+    // Initialize Supabase client
+    const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL || env.SUPABASE_URL;
+    const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY || env.SUPABASE_ANON_KEY;
+    
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.error('Missing Supabase configuration');
+      return new Response(JSON.stringify({
+        success: false,
+        error: 'Server configuration error'
+      }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+    
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
+    
     const body = await request.json();
     const {
       firstName,
@@ -46,7 +65,7 @@ export async function onRequest(context) {
     }
 
     // Check if email already exists
-    const checkResponse = await env.SUPABASE
+    const checkResponse = await supabase
       .from('registrations')
       .select('id')
       .eq('email', email)
@@ -85,7 +104,7 @@ export async function onRequest(context) {
     };
 
     // Insert registration data
-    const insertResponse = await env.SUPABASE
+    const insertResponse = await supabase
       .from('registrations')
       .insert([registrationData])
       .select();
@@ -109,7 +128,7 @@ export async function onRequest(context) {
       for (const tag of tags) {
         // Check if tag is custom and needs to be created
         if (tag.isCustom) {
-          const newTagResponse = await env.SUPABASE
+          const newTagResponse = await supabase
             .from('tags')
             .insert([{
               name: tag.name,
@@ -127,7 +146,7 @@ export async function onRequest(context) {
         }
 
         // Associate tag with registration
-        const tagAssocResponse = await env.SUPABASE
+        const tagAssocResponse = await supabase
           .from('registration_tags')
           .insert([{
             registration_id: registration.id,
