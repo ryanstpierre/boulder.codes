@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import { fetchRegistrations } from '../../utils/api';
+import { fetchCommunityMembers } from '../../utils/api';
 
 export default function CommunityDirectory() {
   const [members, setMembers] = useState([]);
@@ -22,13 +22,9 @@ export default function CommunityDirectory() {
         setIsLoading(true);
         setError('');
         
-        // In a real implementation, this would make an API call with proper auth
-        // We're simulating the API call for now
-        const result = await fetchRegistrations(); 
-        
-        // Filter to only show community members (not hackathon registrations)
-        const communityMembers = result.filter(member => member.registrationType === 'community');
-        setMembers(communityMembers);
+        // Fetch community members from the public API
+        const communityMembers = await fetchCommunityMembers();
+        setMembers(communityMembers || []);
         
         // Extract all unique skills across members
         const skills = new Set();
