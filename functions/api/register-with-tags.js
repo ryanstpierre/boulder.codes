@@ -259,7 +259,7 @@ export async function onRequestPost(context) {
                     <p>Please take these actions to complete your hackathon preparation:</p>
                     <ol style="padding-left: 20px;">
                       <li style="margin-bottom: 12px;"><strong style="color: #ffbe3c;">RSVP on Sched:</strong> <a href="https://boulderstartupweek2025.sched.com/event/21iLy/builders-room-kickoff-bsw-hackathon" style="color: #0a8acd; text-decoration: underline;">Click here to RSVP for the kickoff event</a> so we can get an accurate headcount</li>
-                      <li style="margin-bottom: 12px;"><strong style="color: #ffbe3c;">Join our Discord:</strong> <a href="https://discord.gg/bouldercodes" style="color: #0a8acd; text-decoration: underline;">Join the boulder.codes Discord</a> for pre-event networking and important updates</li>
+                      <li style="margin-bottom: 12px;"><strong style="color: #ffbe3c;">Join our Discord:</strong> <a href="https://discord.gg/jpPyXFpvgq" style="color: #0a8acd; text-decoration: underline;">Join the boulder.codes Discord</a> for pre-event networking and important updates</li>
                       <li><strong style="color: #ffbe3c;">Browse BSW Events:</strong> <a href="https://boulderstartupweek2025.sched.com/" style="color: #0a8acd; text-decoration: underline;">Explore the full BSW schedule</a> to plan which events you'd like to attend</li>
                     </ol>
                   </div>
@@ -288,7 +288,7 @@ export async function onRequestPost(context) {
                   <p>© 2025 boulder.codes | Boulder Startup Week</p>
                   <div style="display: flex; justify-content: center; margin-top: 10px;">
                     <a href="https://boulder.codes" style="color: #0a8acd; margin: 0 10px; text-decoration: none;">Website</a>
-                    <a href="https://discord.gg/bouldercodes" style="color: #0a8acd; margin: 0 10px; text-decoration: none;">Discord</a>
+                    <a href="https://discord.gg/jpPyXFpvgq" style="color: #0a8acd; margin: 0 10px; text-decoration: none;">Discord</a>
                     <a href="https://boulderstartupweek2025.sched.com/" style="color: #0a8acd; margin: 0 10px; text-decoration: none;">BSW Schedule</a>
                   </div>
                 </div>

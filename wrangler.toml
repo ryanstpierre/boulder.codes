@@ -3,7 +3,12 @@ compatibility_date = "2025-04-20"
 
 # For Cloudflare Pages
 pages_build_output_dir = "out"
-build_command = "./cloudflare-build.sh"
+# Remove build_command from here since we'll run it separately
+
+# Development settings
+[dev]
+port = 3000
+local_protocol = "http"
 
 # D1 Database for registrations
 [[d1_databases]]

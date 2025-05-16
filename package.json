@@ -4,7 +4,10 @@
   "description": "Boulder Startup Week Builders' Room Website",
   "scripts": {
     "dev": "next dev",
+    "dev:cf": "wrangler pages dev --port 3000 --compatibility-date=2023-05-18",
     "build": "next build",
+    "build:cf": "npm run build && npm run export",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "deploy": "wrangler pages publish out --branch=main",

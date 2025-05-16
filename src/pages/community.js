@@ -175,7 +175,7 @@ export default function Community() {
                     </svg>
                     <div>
                       <span className="font-medium">Join Discord</span>: Connect with other members on the
-                      <a href="https://discord.gg/bouldercodes" target="_blank" rel="noopener noreferrer" className="text-[#0a8acd] hover:underline mx-1">
+                      <a href="https://discord.gg/jpPyXFpvgq" target="_blank" rel="noopener noreferrer" className="text-[#0a8acd] hover:underline mx-1">
                         boulder.codes Discord
                       </a>
                       to start networking
@@ -202,7 +202,7 @@ export default function Community() {
                 <Link href="/community/directory" className="px-6 py-2 bg-[#0a8acd] hover:bg-[#0a8acd]/80 text-white rounded-full font-medium transition-colors">
                   View Community Directory
                 </Link>
-                <a href="https://discord.gg/bouldercodes" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full font-medium transition-colors">
+                <a href="https://discord.gg/jpPyXFpvgq" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full font-medium transition-colors">
                   Join Discord
                 </a>
               </div>
@@ -521,7 +521,7 @@ export default function Community() {
               </button>
               
               <a 
-                href="https://discord.gg/bouldercodes" 
+                href="https://discord.gg/jpPyXFpvgq" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-3 px-4 text-center font-bold rounded-lg text-white bg-slate-700 hover:bg-slate-600 transition-all text-center flex items-center justify-center"
