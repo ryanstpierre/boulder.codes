@@ -177,7 +177,7 @@ export default function Register() {
                     </svg>
                     <div>
                       <span className="font-medium">Join Discord</span>: Connect with other participants on the
-                      <a href="https://discord.gg/bouldercodes" target="_blank" rel="noopener noreferrer" className="text-[#0a8acd] hover:underline mx-1">
+                      <a href="https://discord.gg/jpPyXFpvgq" target="_blank" rel="noopener noreferrer" className="text-[#0a8acd] hover:underline mx-1">
                         boulder.codes Discord
                       </a>
                       for pre-event networking

@@ -1,3 +1,5 @@
+import { createClient } from '@supabase/supabase-js';
+
 export async function onRequest(context) {
   const { request, env } = context;
   
@@ -12,8 +14,26 @@ export async function onRequest(context) {
   }
 
   try {
+    // Initialize Supabase client with environment variables
+    const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL || env.SUPABASE_URL;
+    const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY || env.SUPABASE_ANON_KEY;
+    
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.error('Missing Supabase configuration');
+      return new Response(JSON.stringify({
+        success: false,
+        error: 'Server configuration error'
+      }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+    
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
+    
     // Query the community_members view
-    const response = await env.SUPABASE.from('community_members')
+    const response = await supabase
+      .from('community_members')
       .select('*')
       .order('created_at', { ascending: false });
 

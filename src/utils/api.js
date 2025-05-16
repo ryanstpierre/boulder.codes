@@ -7,6 +7,10 @@
  */
 export function getApiUrl(endpoint) {
   // Use relative URLs which work in both development and production
+  // For development, ensure we're using the right port
+  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+    return `http://localhost:3000/api/${endpoint}`;
+  }
   return `/api/${endpoint}`;
 }
 
@@ -58,6 +62,12 @@ export async function fetchTags(options = {}) {
  * @returns {Promise<Object>} - Registration result
  */
 export async function registerWithTags(formData) {
+  // Use direct Supabase in development since we can't use API routes with static export
+  if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined' && formData.registrationType === 'community') {
+    const { registerCommunityMemberDev } = await import('./api-dev');
+    return registerCommunityMemberDev(formData);
+  }
+  
   try {
     // Determine the appropriate endpoint based on registration type
     const endpoint = formData.registrationType === 'community' ? 'community/register' : 'register-with-tags';
@@ -172,6 +182,12 @@ export async function administerTag(apiKey, action, tagData) {
  * @returns {Promise<Array>} - Array of community members
  */
 export async function fetchCommunityMembers() {
+  // Use direct Supabase in development since we can't use API routes with static export
+  if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {
+    const { fetchCommunityMembersDev } = await import('./api-dev');
+    return fetchCommunityMembersDev();
+  }
+  
   try {
     const url = getApiUrl('community/members');
     

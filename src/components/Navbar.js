@@ -60,7 +60,7 @@ const Navbar = () => {
             */}
 
             <a
-              href="https://discord.gg/JZFShvee"
+              href="https://discord.gg/jpPyXFpvgq"
               target="_blank"
               rel="noopener noreferrer"
               className="fun-card px-4 py-2 text-sm flex items-center text-[#5865F2] border-[#5865F2]/50 shadow-[0_0_10px_rgba(88,101,242,0.2)] font-medium rounded-lg"
@@ -165,7 +165,7 @@ const Navbar = () => {
 
             <div className="flex gap-2 mt-2">
               <a
-                href="https://discord.gg/JZFShvee"
+                href="https://discord.gg/jpPyXFpvgq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fun-card px-3 py-1.5 text-sm flex items-center flex-1 justify-center text-[#5865F2] border-[#5865F2]/30"

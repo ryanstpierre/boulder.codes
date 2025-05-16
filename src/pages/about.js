@@ -391,7 +391,7 @@ export default function About() {
                     Connect with developers, share knowledge, and stay updated on events.
                   </p>
                   <a 
-                    href="https://discord.gg/JZFShvee" 
+                    href="https://discord.gg/jpPyXFpvgq" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-[#5865F2] hover:text-[#5865F2]/80 font-medium inline-flex items-center"
