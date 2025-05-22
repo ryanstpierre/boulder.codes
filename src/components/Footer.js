@@ -77,6 +77,7 @@ const Footer = () => {
               <li><Link href="/" className="text-gray-400 hover:text-[rgba(var(--bsw-blue),1)] transition-colors glow-text">Home</Link></li>
               <li><Link href="/register" className="text-gray-400 hover:text-[rgba(var(--bsw-blue),1)] transition-colors glow-text">Register</Link></li>
               <li><Link href="/schedule" className="text-gray-400 hover:text-[rgba(var(--bsw-blue),1)] transition-colors glow-text">Schedule</Link></li>
+              <li><Link href="https://github.com/ryanstpierre/boulder.codes/" className="text-gray-400 hover:text-[rgba(var(--bsw-blue),1)] transition-colors glow-text">GitHub</Link></li>
               {/* Sponsors page hidden for now 
               <li><Link href="/sponsors" className="text-gray-400 hover:text-[rgba(var(--bsw-blue),1)] transition-colors glow-text">Sponsors</Link></li>
               */}
