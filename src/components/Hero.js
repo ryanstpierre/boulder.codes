@@ -204,7 +204,7 @@ const Hero = () => {
                   
                   <div className="text-white text-xs font-medium mt-2">
                     <span className="bg-[rgba(var(--bsw-blue),0.4)] px-2 py-0.5 rounded-full border border-[rgba(var(--bsw-blue-light),0.5)]">
-                      May 12-16, 2025
+                      May 4-8, 2026
                     </span>
                   </div>
                 </div>

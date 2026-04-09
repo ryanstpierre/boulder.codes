@@ -188,7 +188,7 @@ export default function Sponsors() {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Become a Sponsor</h2>
             <div className="inline-block bg-gradient-to-r from-yellow-500 to-amber-500 text-black font-bold py-1 px-3 rounded-lg transform -rotate-1 mb-4">
-              2025 Sponsorship Packages
+              2026 Sponsorship Packages
             </div>
             <p className="text-xl text-gray-300 mx-auto mb-6">
               Support the Boulder tech community and gain visibility for your brand
@@ -233,7 +233,7 @@ export default function Sponsors() {
               </div>
               
               <div className="bg-gradient-to-br from-blue-900/30 to-indigo-900/30 backdrop-blur-sm border border-blue-800/30 rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-4 text-blue-300">2025 Special Benefits</h3>
+                <h3 className="text-xl font-bold mb-4 text-blue-300">2026 Special Benefits</h3>
                 <p className="text-gray-300 mb-4">
                   This year, sponsors get extra visibility through our integration with Boulder Startup Week:
                 </p>

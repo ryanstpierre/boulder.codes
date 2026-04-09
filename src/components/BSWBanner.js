@@ -21,7 +21,7 @@ const BSWBanner = () => {
               <span className="absolute -top-2 -right-1 text-yellow-300 text-xs sparkle sparkle-1">✨</span>
             </span>
             <span className="text-xs sm:text-sm bg-[rgba(var(--bsw-blue-dark),0.4)] px-2 sm:px-3 py-0.5 rounded-full backdrop-blur-sm border border-[rgba(255,255,255,0.25)] shadow-[0_0_10px_rgba(255,255,255,0.1)] font-medium">
-              May 12-15, 2025
+              May 4-8, 2026
             </span>
           </div>
         </div>

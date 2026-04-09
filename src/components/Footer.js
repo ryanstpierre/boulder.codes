@@ -34,10 +34,10 @@ const Footer = () => {
             <div className="text-center md:text-right">
               <div className="fun-card rounded-full px-4 py-2 inline-flex items-center mb-3">
                 <BSWLogo variant="mark" className="h-5 w-auto mr-2" withGlow />
-                <span className="text-sm text-white">Official BSW 2025 Event</span>
+                <span className="text-sm text-white">Official BSW 2026 Event</span>
               </div>
               <div className="text-gray-300 max-w-md">
-                The official hackathon of Boulder Startup Week 2025, bringing together developers, designers, and entrepreneurs.
+                The official hackathon of Boulder Startup Week 2026, bringing together developers, designers, and entrepreneurs.
               </div>
               <a 
                 href="https://boulderstartupweek.com/schedule/" 
@@ -64,7 +64,7 @@ const Footer = () => {
               <BSWLogo variant="mark" className="w-auto h-5" withGlow />
             </h3>
             <div className="text-gray-400">
-              A collaboration between boulder.codes and Boulder Startup Week bringing you the official hackathon of BSW 2025.
+              A collaboration between boulder.codes and Boulder Startup Week bringing you the official hackathon of BSW 2026.
             </div>
             <div className="text-gray-400 mt-2">
               Join us for 5 days of building, learning, and networking at Boulder's premier startup event.
@@ -99,7 +99,7 @@ const Footer = () => {
             <div className="fun-card p-3 w-full">
               <h4 className="text-white text-sm font-semibold mb-2 glow-text">Event Details</h4>
               <div className="text-gray-300">
-                May 12-16, 2025<br />
+                May 4-8, 2026<br />
                 Downtown Boulder<br />
                 Part of <a href="https://boulderstartupweek.com" target="_blank" rel="noopener noreferrer" className="text-[rgba(var(--bsw-blue),1)] hover:text-blue-300 inline-flex items-center glow-text">Boulder Startup Week </a>
               </div>
@@ -119,7 +119,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="text-gray-500 mt-2">
-            Builders&apos; Room: The Official Hackathon of Boulder Startup Week 2025
+            Builders&apos; Room: The Official Hackathon of Boulder Startup Week 2026
           </div>
         </div>
       </div>

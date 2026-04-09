@@ -9,7 +9,7 @@ export default function Schedule() {
   
   const days = [
     {
-      date: "Monday, May 12th, 2025",
+      date: "Monday, May 4th, 2026",
       name: "Day 1: Kickoff & Team Formation",
       events: [
         { time: "10:00 AM", title: "Hackathon Kickoff", description: "Welcome presentation at Galvanize (1023 Walnut St), overview of the event format, and introduction to the available resources and mentors", highlight: true },
@@ -22,7 +22,7 @@ export default function Schedule() {
       ]
     },
     {
-      date: "Tuesday, May 13th, 2025",
+      date: "Tuesday, May 5th, 2026",
       name: "Day 2: Building & Mentorship",
       events: [
         { time: "9:00 AM", title: "Morning Check-in", description: "Coffee and breakfast provided as teams gather to start the day", highlight: true },
@@ -36,7 +36,7 @@ export default function Schedule() {
       ]
     },
     {
-      date: "Wednesday, May 14th, 2025",
+      date: "Wednesday, May 6th, 2026",
       name: "Day 3: Development & Feedback",
       events: [
         { time: "9:00 AM", title: "Morning Check-in", description: "Coffee and breakfast provided as teams gather to continue their work", highlight: true },
@@ -50,7 +50,7 @@ export default function Schedule() {
       ]
     },
     {
-      date: "Thursday, May 15th, 2025",
+      date: "Thursday, May 7th, 2026",
       name: "Day 4: Final Touches & Informal Demos",
       events: [
         { time: "9:00 AM", title: "Breakfast", description: "Coffee and breakfast provided for the final full day of work", highlight: true },
@@ -62,12 +62,12 @@ export default function Schedule() {
       ]
     },
     {
-      date: "Friday, May 16th, 2025",
+      date: "Friday, May 8th, 2026",
       name: "Day 5: Hackathon Showcase",
       events: [
         { time: "9:00 AM - 12:00 PM", title: "BSW Sessions", description: "Attend Boulder Startup Week events and connect with the broader startup community", flexible: true },
         { time: "9:00 AM", title: "BSW Event: Reinforcement Learning for Agents", description: "Deep dive into RL techniques for AI applications at Sovrn", muted: true, bsw: true },
-        { time: "12:00 PM - 1:00 PM", title: "Hackathon Showcase & Awards", description: "Teams present final projects and receive awards at Kiln (2101 Pearl St). View the official event on the BSW schedule: https://boulderstartupweek2025.sched.com/event/23b3n/builders-room-hackathon-showcase", highlight: true, special: true },
+        { time: "12:00 PM - 1:00 PM", title: "Hackathon Showcase & Awards", description: "Teams present final projects and receive awards at Kiln (2101 Pearl St). View the official event on the BSW schedule: https://boulderstartupweek.com/schedule", highlight: true, special: true },
         { time: "5:00 PM onward", title: "Friday Night Closing Parties 🎉", description: "Celebrate an amazing week at various venues throughout Boulder! Connect, reflect, and toast to new friendships and collaborations", highlight: true, special: true },
       ]
     }
@@ -76,8 +76,8 @@ export default function Schedule() {
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       <Head>
-        <title>Schedule | boulder.codes × BSW - The Official Hackathon of Boulder Startup Week 2025</title>
-        <meta name="description" content="Event schedule for the Builders' Room - the official hackathon of Boulder Startup Week 2025, presented by boulder.codes in partnership with BSW." />
+        <title>Schedule | boulder.codes × BSW - The Official Hackathon of Boulder Startup Week 2026</title>
+        <meta name="description" content="Event schedule for the Builders' Room - the official hackathon of Boulder Startup Week 2026, presented by boulder.codes in partnership with BSW." />
       </Head>
       
       <Navbar />
@@ -85,7 +85,7 @@ export default function Schedule() {
       <main className="container mx-auto px-4 py-24">
         <div className="text-center mb-4">
           <div className="inline-block px-4 py-1 rounded-full bg-[#0a8acd]/20 text-[#0a8acd] text-sm font-medium mb-2">
-            Official Boulder Startup Week 2025 Event
+            Official Boulder Startup Week 2026 Event
           </div>
         </div>
         <h1 className="text-4xl font-bold mb-4 text-center">Event Schedule</h1>

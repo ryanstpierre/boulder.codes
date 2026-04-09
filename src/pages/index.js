@@ -83,7 +83,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 max-w-5xl mx-auto mb-12">
               <div className="flex-1">
                 <div className="inline-block bg-blue-600/20 border border-blue-500/30 px-3 py-1 rounded-full text-blue-300 font-semibold text-sm mb-4">
-                  May 12-16, 2025
+                  May 4-8, 2026
                 </div>
                 <h2 className="text-4xl font-bold mb-6">Startup Weekend Format with Boulder Startup Week Integration</h2>
                 <div className="text-lg text-gray-300 mb-6">
@@ -200,7 +200,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto bg-slate-700 rounded-lg p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-blue-300">🚀 Day 1: Monday, May 12</h3>
+                  <h3 className="text-xl font-bold mb-4 text-blue-300">🚀 Day 1: Monday, May 4</h3>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3">
                       <span className="font-mono text-gray-300 min-w-[4.5rem]">10:00 AM</span>
@@ -218,7 +218,7 @@ export default function Home() {
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-blue-300">💻 Day 2: Tuesday, May 13</h3>
+                  <h3 className="text-xl font-bold mb-4 text-blue-300">💻 Day 2: Tuesday, May 5</h3>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3">
                       <span className="font-mono text-gray-300 min-w-[4.5rem]">9:00 AM</span>
@@ -236,7 +236,7 @@ export default function Home() {
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-blue-300">⚙️ Day 3: Wednesday, May 14</h3>
+                  <h3 className="text-xl font-bold mb-4 text-blue-300">⚙️ Day 3: Wednesday, May 6</h3>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3">
                       <span className="font-mono text-gray-300 min-w-[4.5rem]">9:00 AM</span>
@@ -254,7 +254,7 @@ export default function Home() {
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-blue-300">🎭 Day 4: Thursday, May 15</h3>
+                  <h3 className="text-xl font-bold mb-4 text-blue-300">🎭 Day 4: Thursday, May 7</h3>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3">
                       <span className="font-mono text-gray-300 min-w-[4.5rem]">9:00 AM</span>
@@ -273,7 +273,7 @@ export default function Home() {
               </div>
               
               <div className="mt-6">
-                <h3 className="text-xl font-bold mb-4 text-blue-300">🌐 Day 5: Friday, May 16</h3>
+                <h3 className="text-xl font-bold mb-4 text-blue-300">🌐 Day 5: Friday, May 8</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <span className="font-mono text-gray-300 min-w-[8rem]">9:00 AM - 3:00 PM</span>
@@ -334,7 +334,7 @@ export default function Home() {
               <div className="bg-blue-900/30 border border-blue-700/30 rounded-lg py-4 px-6">
                 <div className="text-lg">
                   <span className="font-semibold text-blue-300">💡 Pro Tip:</span> The Builders' Room schedule is designed to let you attend Boulder Startup Week sessions while still working on your project.
-                  <Link href="https://boulderstartupweek2025.sched.com/" className="ml-2 text-blue-400 hover:underline">
+                  <Link href="https://boulderstartupweek.com/schedule" className="ml-2 text-blue-400 hover:underline">
                     Check the full BSW schedule
                   </Link>
                 </div>
