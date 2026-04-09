@@ -143,32 +143,32 @@ export async function onRequestPost(context) {
                 <div style="background-color: #131c31; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; border: 1px solid #253552;">
                   <img src="https://boulderstartupweek.com/app/uploads/2021/04/BSW2021_LockUp_white.png" alt="Boulder Startup Week Logo" style="height: 60px; margin-bottom: 15px;">
                   <h1 style="color: white; margin: 0; font-weight: 800;">Registration Confirmed!</h1>
-                  <p style="color: #0a8acd; margin-top: 10px; font-weight: 600;">BSW Builders' Room Hackathon 2025</p>
+                  <p style="color: #0a8acd; margin-top: 10px; font-weight: 600;">BSW Builders' Room Hackathon 2026</p>
                 </div>
                 
                 <div style="background-color: #1a2332; padding: 25px; border-radius: 0 0 10px 10px; border: 1px solid #253552; border-top: none;">
                   <p>Hi ${formData.firstName},</p>
                   
-                  <p>Thank you for registering for the <strong style="color: #0a8acd;">Builders' Room Hackathon</strong> at Boulder Startup Week 2025! We're thrilled to have you join us for this exciting event.</p>
+                  <p>Thank you for registering for the <strong style="color: #0a8acd;">Builders' Room Hackathon</strong> at Boulder Startup Week 2026! We're thrilled to have you join us for this exciting event.</p>
                   
                   <div style="background-color: rgba(10, 138, 205, 0.15); padding: 20px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #0a8acd;">
                     <h2 style="color: #0a8acd; margin-top: 0; font-weight: 700;">Event Details</h2>
-                    <p><strong>Dates:</strong> May 12-16, 2025</p>
+                    <p><strong>Dates:</strong> May 4-8, 2026</p>
                     <p><strong>Main Locations:</strong></p>
                     <ul>
                       <li><strong>Galvanize:</strong> 1023 Walnut St #100, Boulder, CO 80302 (Kickoff/Closeout)</li>
                       <li><strong>Canyon Center (BSW HQ):</strong> 1881 9th Street, Downtown Boulder (Lunches/Mentoring)</li>
                     </ul>
-                    <p><strong>Kickoff:</strong> Monday, May 12th at 10:00 AM at Galvanize</p>
+                    <p><strong>Kickoff:</strong> Monday, May 4th at 10:00 AM at Galvanize</p>
                   </div>
                   
                   <div style="background-color: rgba(255, 190, 60, 0.15); padding: 20px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #ffbe3c;">
                     <h2 style="color: #ffbe3c; margin-top: 0; font-weight: 700;">Important Next Steps</h2>
                     <p>Please take these actions to complete your hackathon preparation:</p>
                     <ol style="padding-left: 20px;">
-                      <li style="margin-bottom: 12px;"><strong style="color: #ffbe3c;">RSVP on Sched:</strong> <a href="https://boulderstartupweek2025.sched.com/event/21iLy/builders-room-kickoff-bsw-hackathon" style="color: #0a8acd; text-decoration: underline;">Click here to RSVP for the kickoff event</a> so we can get an accurate headcount</li>
+                      <li style="margin-bottom: 12px;"><strong style="color: #ffbe3c;">RSVP on Sched:</strong> <a href="https://boulderstartupweek.com/schedule" style="color: #0a8acd; text-decoration: underline;">Click here to RSVP for the kickoff event</a> so we can get an accurate headcount</li>
                       <li style="margin-bottom: 12px;"><strong style="color: #ffbe3c;">Join our Discord:</strong> <a href="https://discord.gg/jpPyXFpvgq" style="color: #0a8acd; text-decoration: underline;">Join the boulder.codes Discord</a> for pre-event networking and important updates</li>
-                      <li><strong style="color: #ffbe3c;">Browse BSW Events:</strong> <a href="https://boulderstartupweek2025.sched.com/" style="color: #0a8acd; text-decoration: underline;">Explore the full BSW schedule</a> to plan which events you'd like to attend</li>
+                      <li><strong style="color: #ffbe3c;">Browse BSW Events:</strong> <a href="https://boulderstartupweek.com/schedule" style="color: #0a8acd; text-decoration: underline;">Explore the full BSW schedule</a> to plan which events you'd like to attend</li>
                     </ol>
                   </div>
                   
@@ -193,11 +193,11 @@ export async function onRequestPost(context) {
                 </div>
                 
                 <div style="padding: 20px; text-align: center; font-size: 12px; color: #6a7a9d; margin-top: 15px;">
-                  <p>© 2025 boulder.codes | Boulder Startup Week</p>
+                  <p>© 2026 boulder.codes | Boulder Startup Week</p>
                   <div style="display: flex; justify-content: center; margin-top: 10px;">
                     <a href="https://boulder.codes" style="color: #0a8acd; margin: 0 10px; text-decoration: none;">Website</a>
                     <a href="https://discord.gg/jpPyXFpvgq" style="color: #0a8acd; margin: 0 10px; text-decoration: none;">Discord</a>
-                    <a href="https://boulderstartupweek2025.sched.com/" style="color: #0a8acd; margin: 0 10px; text-decoration: none;">BSW Schedule</a>
+                    <a href="https://boulderstartupweek.com/schedule" style="color: #0a8acd; margin: 0 10px; text-decoration: none;">BSW Schedule</a>
                   </div>
                 </div>
               </div>

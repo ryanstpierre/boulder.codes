@@ -90,8 +90,8 @@ export default function Register() {
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       <Head>
-        <title>Register | boulder.codes × BSW - The Official Hackathon of Boulder Startup Week 2025</title>
-        <meta name="description" content="Register for the Builders' Room - the official hackathon of Boulder Startup Week 2025, presented by boulder.codes in partnership with BSW." />
+        <title>Register | boulder.codes × BSW - The Official Hackathon of Boulder Startup Week 2026</title>
+        <meta name="description" content="Register for the Builders' Room - the official hackathon of Boulder Startup Week 2026, presented by boulder.codes in partnership with BSW." />
       </Head>
       
       <Navbar />
@@ -100,10 +100,10 @@ export default function Register() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-1 rounded-full bg-[#0a8acd]/20 text-[#0a8acd] text-sm font-medium mb-4">
-              Official Boulder Startup Week 2025 Event
+              Official Boulder Startup Week 2026 Event
             </div>
             <h1 className="text-4xl font-bold mb-4">Register for Builders&apos; Room</h1>
-            <h2 className="text-xl font-medium mb-4 text-[#0a8acd]">The Official Hackathon of Boulder Startup Week 2025</h2>
+            <h2 className="text-xl font-medium mb-4 text-[#0a8acd]">The Official Hackathon of Boulder Startup Week 2026</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Join us for an exciting 5-day hackathon experience as part of the official Boulder Startup Week programming
             </p>
@@ -118,7 +118,7 @@ export default function Register() {
                 <div>
                   <h3 className="text-lg font-medium text-[#0a8acd] mb-2">Registration Information</h3>
                   <ul className="text-gray-300 space-y-1">
-                    <li>• Event runs Monday, May 12th through Friday, May 16th</li>
+                    <li>• Event runs Monday, May 4th through Friday, May 8th</li>
                     <li>• Registration fee: $0 </li>
                     <li>• Space is limited to 100 participants</li>
                     <li>• All meals and snacks included</li>
@@ -130,7 +130,7 @@ export default function Register() {
             </div>
             <div className="h-60 md:h-auto rounded-lg overflow-hidden relative">
               <div className="absolute top-2 right-2 bg-[#0a8acd] text-white text-xs px-2 py-1 rounded-md font-medium z-10">
-                BSW 2025
+                BSW 2026
               </div>
               <img 
                 src="/images/BSW_Builders_Room%20-%2020.jpeg" 
@@ -151,7 +151,7 @@ export default function Register() {
               </div>
               <h2 className="text-2xl font-bold mb-4">Registration Successful!</h2>
               <div className="inline-block px-4 py-1 rounded-full bg-[#0a8acd]/20 text-[#0a8acd] text-sm font-medium mb-4">
-                Official Boulder Startup Week 2025 Event
+                Official Boulder Startup Week 2026 Event
               </div>
               <p className="mb-4 text-gray-300">
                 Thank you for registering for the Builders' Room hackathon. We've sent a confirmation email to your inbox with all the details you'll need.
@@ -165,7 +165,7 @@ export default function Register() {
                     </svg>
                     <div>
                       <span className="font-medium">RSVP on Sched</span>: Please 
-                      <a href="https://boulderstartupweek2025.sched.com/event/21iLy/builders-room-kickoff-bsw-hackathon" target="_blank" rel="noopener noreferrer" className="text-[#0a8acd] hover:underline mx-1">
+                      <a href="https://boulderstartupweek.com/schedule" target="_blank" rel="noopener noreferrer" className="text-[#0a8acd] hover:underline mx-1">
                         click here to RSVP for the kickoff event
                       </a>
                       so we can get an accurate headcount
@@ -191,7 +191,7 @@ export default function Register() {
                 <Link href="/schedule" className="px-6 py-2 bg-[#0a8acd] hover:bg-[#0a8acd]/80 text-white rounded-full font-medium transition-colors">
                   View Event Schedule
                 </Link>
-                <a href="https://boulderstartupweek2025.sched.com/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full font-medium transition-colors">
+                <a href="https://boulderstartupweek.com/schedule" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full font-medium transition-colors">
                   Browse BSW Events
                 </a>
               </div>
